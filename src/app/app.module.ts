@@ -9,6 +9,11 @@ import { AsistenciaComponent } from './components/asistencia/asistencia.componen
 import { InicioRegistroComponent } from './components/inicio-registro/inicio-registro.component';
 import { HistorialComponent } from './components/historial/historial.component';
 
+//Inicio Servicios
+import { CargarScriptsService } from './services/cargar-scripts.service';
+import { PqrsComponent } from './components/pqrs/pqrs.component'
+//Fin Servicios
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +21,16 @@ import { HistorialComponent } from './components/historial/historial.component';
     InicioComponent,
     AsistenciaComponent,
     InicioRegistroComponent,
-    HistorialComponent
+    HistorialComponent,
+    PqrsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
