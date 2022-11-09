@@ -25,3 +25,8 @@ img{width: 60%; margin-left: 60px;}
 
 .login{opacity: 1; display: block; }
 .registro{display: none;}
+
+
+/*Diseños de validaciones*/
+.error{color: brown;}
+.ok{color: green;}
