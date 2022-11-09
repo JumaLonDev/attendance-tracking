@@ -1,0 +1,10 @@
+
+nav{display: flex;width: 100%; height: 80px; background-color: black; box-shadow:5px 3px 20px 6px rgba(206, 1, 206, 1); font-size: 20px;}
+.perfil{position: relative; left:3%; align-items: flex-end;}
+nav ul{display: flex;list-style: none; width: 50%; justify-content: space-around; align-items: center; margin: auto;}
+nav ul li{display: inline-flex;}
+a{text-decoration: none; color: white; transition: all .5s linear; border-bottom: 0px solid purple;}
+a:hover{border-bottom: 3px solid purple;}
+.logo{ padding: 1   px;}
+.logo img{width: 100%; height: 4.9rem; position: relative; border-radius:50%; margin-left:20%;}
+ol{color:white}
