@@ -2,7 +2,9 @@ window.addEventListener('load', ()=>{
 
     const formularioL = document.querySelector('.formularioL');
     const formularioR = document.querySelector('.formularioR');
-    const email = document.querySelector('.email');
+    const email = document.querySelector('#email');
+    const emailL = document.querySelector('.emailL');
+    const passwordL = document.querySelector('.passwordL');
     const password = document.querySelector('.password');
     const Ncontrato = document .querySelector('.Ncontracto');
     const NombreC = document.querySelector('.NombreC');
@@ -11,11 +13,13 @@ window.addEventListener('load', ()=>{
     formularioL.addEventListener('submit', (a)=>{
         a.preventDefault();
         ValidarFormulario();
+        console.log('Login');
     });
 
-    formularioR.addEventListener('submit', (a)=>{
-        a.preventDefault();
+    formularioR.addEventListener('submit', (e)=>{
+        e.preventDefault();
         ValidarFormulario();
+        console.log('Registro');
     });
 
     
@@ -24,18 +28,44 @@ window.addEventListener('load', ()=>{
         passwordValue = password.value.trim();
         NcontractoValue = Ncontrato.value.trim();
         NombreCValue = NombreC.value.trim();
-        RPasswordValue = RPassword.trim();
+        RPasswordValue = RPassword.value.trim();
+        emailLValue = emailL.value.trim();
+        passwordLValue = passwordL.value.trim();
+
+
+        //Validación Login
+        if(emailLValue === '')
+        {
+            failValidation(emailL, 'Campo en blanco');
+        }else if(!emailValidation(emailLValue))
+        {
+            failValidation(emailL, 'Formato Incorrecto');
+        }else{
+            okValidation(emailL, '')
+        }
+
+        if(passwordLValue === ''){
+            failValidation(passwordL, 'Campo en blanco');
+            console.log('password L'); 
+           
+        }else{
+            okValidation(passwordL, '');
+        }
+
+
+        //Fin Validación Login
+        
 
 
         //Validación del campo email 
-        if(!emailValue){
-            failValidation(email,'Campo en blanco');
-            return false;
-        }else if(!emailValue(emailValidation)){
-            failValidation(email, 'Formato Icorrecto');
-            return false;
+        if(emailValue === '')
+        {
+            failValidation(email, 'Campo en blanco');
+        }else if(!emailValidation(emailValue))
+        {
+            failValidation(email, 'Formato Incorrecto');
         }else{
-            okValidation(email, '');
+            okValidation(email, '')
         }
 
         //Validación de la contraseña
@@ -46,15 +76,15 @@ window.addEventListener('load', ()=>{
         if(!passwordValue)
         {
             failValidation(password, 'Campo en blanco');
-            return false;
+           
         }else if(passwordValue.length < 8)
         {
             failValidation(password, 'Debe tener minimo 8 caracterez');
-            return false;
+           
         }else if(!passwordValue.match(er))
         {
             failValidation(password, 'Debe tener una mayuscula, minusculas y numeros');
-            return false;
+           
         }else{
             okValidation(password, '');
         }
@@ -62,13 +92,13 @@ window.addEventListener('load', ()=>{
         //Validación del número de contrato
         if(!NcontractoValue){
             failValidation(Ncontrato, "Campo en blanco");
-            return false; 
+            
         }else if(NcontractoValue.length < 8){
             failValidation(Ncontrato, 'Debe tener minimo 8 caracterez');
-            return false;
+           
         }else if(!NcontractoValue.match(er)){
             failValidation(Ncontrato, 'Debe tener una mayuscula, minusculas y numeros');
-            return false;
+           
         }else{
             okValidation(Ncontrato, '');
         }
@@ -77,16 +107,16 @@ window.addEventListener('load', ()=>{
 
         if(!NombreCValue){
             failValidation(NombreC, 'El campo está en blanco');
-            return false;
+           
         }else if(isNaN(NombreCValue)){
             failValidation(Ncontrato, 'El nombre no puede contener núemros');
-            return false;
+           
         }else {
             okValidation(Ncontrato, '');
         }
     }
     const emailValidation = (email) =>{
-        return /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/.test(email);
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
     }
 
     //Objeto false para las validaciones.
@@ -106,4 +136,6 @@ window.addEventListener('load', ()=>{
         notify.innerText = sms;
         form.className = 'ok';
     }
+
+    console.log("Hola");
 })
