@@ -11,7 +11,9 @@ import { HistorialComponent } from './components/historial/historial.component';
 
 //Inicio Servicios
 import { CargarScriptsService } from './services/cargar-scripts.service';
-import { PqrsComponent } from './components/pqrs/pqrs.component'
+import { PqrsComponent } from './components/pqrs/pqrs.component';
+import { StarPaginaComponent } from './components/star-pagina/star-pagina.component';
+import { FooterComponent } from './components/footer/footer.component'
 //Fin Servicios
 
 @NgModule({
@@ -22,7 +24,9 @@ import { PqrsComponent } from './components/pqrs/pqrs.component'
     AsistenciaComponent,
     InicioRegistroComponent,
     HistorialComponent,
-    PqrsComponent
+    PqrsComponent,
+    StarPaginaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

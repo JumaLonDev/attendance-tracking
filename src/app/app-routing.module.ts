@@ -5,14 +5,18 @@ import { AsistenciaComponent } from './components/asistencia/asistencia.componen
 import { InicioRegistroComponent } from './components/inicio-registro/inicio-registro.component';
 import { HistorialComponent } from './components/historial/historial.component';
 import { PqrsComponent} from './components/pqrs/pqrs.component';
+import { StarPaginaComponent } from './components/star-pagina/star-pagina.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes: Routes = [
-  {path:'', pathMatch:'full', redirectTo:'inicio-registro'},
+  {path:'', pathMatch:'full', redirectTo:'star-pagina'},
+  {path:'star-pagina', component: StarPaginaComponent},
   {path:'inicio', component: InicioComponent},
   {path:'asistencia', component: AsistenciaComponent},
   {path:'inicio-registro', component:InicioRegistroComponent},
   {path: 'historial', component:HistorialComponent},
-  {path:'pqrs', component:PqrsComponent}
+  {path:'pqrs', component:PqrsComponent},
+  {path:'footer', component:FooterComponent}
 ];
 
 @NgModule({
