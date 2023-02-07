@@ -1,2 +1,13 @@
+<!--Menú de navegación-->
 <app-navbar></app-navbar>
-<p>pqrs works!</p>
+<form action="" [formGroup]="pqrsForm" class="pqrs">
+    <label for="">Correo del profesor a quien se dirige el PQRS</label>
+    <input id="email" type="email" placeholder="Correo del profesor" formControlName="email">
+    <label class="error" for="" *ngIf="pqrsForm.get('email')?.hasError('required') && pqrsForm.get('email')?.touched">El correo del profesor es requerido</label>
+    <label for="">Digite tus peticiones, Quejas, Reclamos y Sugerencias</label>
+    <textarea rows="10" id="queja" formControlName="queja"></textarea>
+    <label class="error" for="" *ngIf="pqrsForm.get('queja')?.hasError('required') && pqrsForm.get('queja')?.touched">Debe de haber texto</label>
+    <button type="submit" class="enviarPQRS"> Enviar PQRS <i class="fa-solid fa-paper-plane"></i> </button>
+</form>
+<!--Footer de la página-->
+<app-footer></app-footer>

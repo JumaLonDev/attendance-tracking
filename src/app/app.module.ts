@@ -8,12 +8,13 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { AsistenciaComponent } from './components/asistencia/asistencia.component';
 import { InicioRegistroComponent } from './components/inicio-registro/inicio-registro.component';
 import { HistorialComponent } from './components/historial/historial.component';
-
-//Inicio Servicios
 import { CargarScriptsService } from './services/cargar-scripts.service';
 import { PqrsComponent } from './components/pqrs/pqrs.component';
 import { StarPaginaComponent } from './components/star-pagina/star-pagina.component';
 import { FooterComponent } from './components/footer/footer.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { ConfiPerfilComponent } from './components/confi-perfil/confi-perfil.component';
+import { ConfiAdministrativaComponent } from './components/confi-administrativa/confi-administrativa.component';
 //Fin Servicios
 
 @NgModule({
@@ -26,11 +27,14 @@ import { FooterComponent } from './components/footer/footer.component'
     HistorialComponent,
     PqrsComponent,
     StarPaginaComponent,
-    FooterComponent
+    FooterComponent,
+    ConfiPerfilComponent,
+    ConfiAdministrativaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     CargarScriptsService

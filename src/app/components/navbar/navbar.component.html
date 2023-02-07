@@ -1,12 +1,24 @@
-<nav>
-    <div class="logo"><img src="../../../assets/images/image-removebg-preview.png"></div>
+<nav class="navnormal">
+    <div class="logo"><img src="../../../assets/images/LoguitoAT-1(1).png"></div>
     <div class="perfil">
-        <li><a href="#">Juan Manuel Londoño</a></li>
+        <p>Juan Manuel Londoño</p>
+        <i class="fa-solid fa-gear confi" routerLink="../confi-perfil"></i>
     </div>
-    <ul>
+    <ul class="menunormal">
         <li><a routerLink="../inicio">Inicio</a></li>
-        <li><a href="../asistencia">Asistencia</a></li>
-        <li><a href="../historial">Historial</a></li>
-        <li><a href="../pqrs">Observaciones</a></li>
+        <li><a routerLink="../pqrs">PQRS</a></li>
+        <li><a routerLink="../inicio">Cursos</a></li>
+    </ul>
+    <ul class="menuresponsive" id="menuresponsive">
+        <i class="fa-solid fa-bars activo" id="barras" (click)="menuResponsive('abrir')"></i>
+        <i class="fa-solid fa-xmark inactivo" id="cerrar" (click)="menuResponsive('cerrar')"></i>
     </ul>
 </nav>
+<nav  class="menucontenido__inactivo" id="abrirMenu">
+    <ul>
+        <li><a routerLink="../inicio">Inicio</a></li>
+        <li><a routerLink="../pqrs">PQRS</a></li>
+        <li><a routerLink="../inicio">Cursos</a></li>
+    </ul>
+</nav>
+

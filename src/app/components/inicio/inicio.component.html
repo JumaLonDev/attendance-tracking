@@ -1,2 +1,26 @@
 <app-navbar></app-navbar>
-<p>inicio works!</p>
+<div class="main">
+    <table>
+        <tr routerLink="../asistencia">
+            <td>2473196 ADSO <i class="fa-solid fa-bars icon"></i></td>
+        </tr>
+        <tr>
+            <td>2473196 ADSI <i class="fa-solid fa-bars icon"></i></td>
+        </tr>
+    </table>
+    
+    <!--Formulario para agregar fichas-->
+    <form action="" [formGroup]="ACursoForm" class="form-inactivo" id="AgregarCurso">
+        <i class="fa-regular fa-circle-xmark cerrar" (click)="Addcurso('cerrar')"></i>
+        <h2>Agregar Curso</h2>
+        <input class="addCurso" type="number" placeholder="Número de Curso" formControlName="addCurso">
+        <label class="error" for="" *ngIf="ACursoForm.get('addCurso')?.hasError('required') && ACursoForm.get('addCurso')?.touched">El número de curso es requerido</label>
+        <button class="agregar" id="AgregarCurso" type="submit"> Agregar Curso</button>
+    </form>
+
+    <button class="add" (click)="Addcurso('abrir')">
+        <i class="fa-solid fa-plus"></i>
+    </button>
+    <app-footer></app-footer>
+</div>
+

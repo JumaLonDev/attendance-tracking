@@ -7,6 +7,8 @@ import { HistorialComponent } from './components/historial/historial.component';
 import { PqrsComponent} from './components/pqrs/pqrs.component';
 import { StarPaginaComponent } from './components/star-pagina/star-pagina.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ConfiPerfilComponent } from './components/confi-perfil/confi-perfil.component';
+import { ConfiAdministrativaComponent } from './components/confi-administrativa/confi-administrativa.component';
 
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'star-pagina'},
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path:'inicio-registro', component:InicioRegistroComponent},
   {path: 'historial', component:HistorialComponent},
   {path:'pqrs', component:PqrsComponent},
-  {path:'footer', component:FooterComponent}
+  {path:'footer', component:FooterComponent},
+  {path:'confi-perfil', component:ConfiPerfilComponent},
+  {path:'confi-administrativa', component:ConfiAdministrativaComponent}
 ];
 
 @NgModule({
