@@ -1,14 +1,52 @@
 <app-navbar></app-navbar>
 <div class="main">
-    <table>
-        <tr routerLink="../asistencia">
-            <td>2473196 ADSO <i class="fa-solid fa-bars icon"></i></td>
-        </tr>
-        <tr>
-            <td>2473196 ADSI <i class="fa-solid fa-bars icon"></i></td>
-        </tr>
-    </table>
-    
+    <div class="cards">
+        <div class="card">
+            <div class="card-header">
+                <h2>ADSO</h2>
+            </div>
+            <div class="card-body">
+                <h3>2473196</h3>
+                <h4>Mañana</h4>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2>ADSO</h2>
+            </div>
+            <div class="card-body">
+                <h3>2473196</h3>
+                <h4>Mañana</h4>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2>ADSO</h2>
+            </div>
+            <div class="card-body">
+                <h3>2473196</h3>
+                <h4>Mañana</h4>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2>ADSO</h2>
+            </div>
+            <div class="card-body">
+                <h3>2473196</h3>
+                <h4>Mañana</h4>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2>ADSO</h2>
+            </div>
+            <div class="card-body">
+                <h3>2473196</h3>
+                <h4>Mañana</h4>
+            </div>
+        </div>
+    </div>
     <!--Formulario para agregar fichas-->
     <form action="" [formGroup]="ACursoForm" class="form-inactivo" id="AgregarCurso">
         <i class="fa-regular fa-circle-xmark cerrar" (click)="Addcurso('cerrar')"></i>
@@ -21,6 +59,6 @@
     <button class="add" (click)="Addcurso('abrir')">
         <i class="fa-solid fa-plus"></i>
     </button>
-    <app-footer></app-footer>
 </div>
+<app-footer></app-footer>
 

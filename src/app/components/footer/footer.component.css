@@ -8,6 +8,8 @@ h2{font-size: 15px; text-align: center; border-bottom: 3px solid #e29226;}
 .footer1 ul li:hover{border-bottom: 1px solid #e29226;}
 
 @media only screen and (max-width:715px){
-    footer{align-items: center; height: auto; flex-direction: column;}
+    h2{font-size: 10;}
+    footer{align-items: center; height: auto; font-size: 1px;}
+    
     
 }
