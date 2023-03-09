@@ -4,21 +4,11 @@
         <p>Juan Manuel Londoño</p>
         <i class="fa-solid fa-gear confi" routerLink="../confi-perfil"></i>
     </div>
-    <ul class="menunormal">
-        <li><a routerLink="../inicio">Inicio</a></li>
-        <li><a routerLink="../pqrs">PQRS</a></li>
-        <li><a routerLink="../inicio">Cursos</a></li>
-    </ul>
-    <ul class="menuresponsive" id="menuresponsive">
-        <i class="fa-solid fa-bars activo" id="barras" (click)="menuResponsive('abrir')"></i>
-        <i class="fa-solid fa-xmark inactivo" id="cerrar" (click)="menuResponsive('cerrar')"></i>
+    <input type="checkbox" id="chbox">
+    <label for="chbox" class="menur"><i class="fa-solid fa-bars"></i></label>
+    <ul class="menunormal side">
+        <li><a routerLink="/inicio">Inicio</a></li>
+        <li><a routerLink="/pqrs">PQRS</a></li>
+        <li><a routerLink="/inicio">Cursos</a></li>
     </ul>
 </nav>
-<nav  class="menucontenido__inactivo" id="abrirMenu">
-    <ul>
-        <li><a routerLink="../inicio">Inicio</a></li>
-        <li><a routerLink="../pqrs">PQRS</a></li>
-        <li><a routerLink="../inicio">Cursos</a></li>
-    </ul>
-</nav>
-
