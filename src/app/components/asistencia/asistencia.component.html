@@ -50,16 +50,18 @@
 </table>
 
 <div class="guardar">
-    <button type="submit">GUARDAR</button>
+    <button type="submit">Guardar</button>
 </div>
 
 <!--Observaciones-->
 <form action="" class="observacion__inactivo" id="observacion">
     <i class="fa-regular fa-circle-xmark cerrar" (click)="addObservacion('cerrar')"></i>
-    <h3 for="">Adrés Escobar</h3>
-    <label for="">Añade las observaciones</label>
-    <textarea rows="10" id="queja"></textarea>
-    <button type="submit" class="enviarobservacion"> Añadir observacion <i class="fa-solid fa-plus"></i></button>
+    <h3 for="">Tatiana Mosquera</h3>
+    <textarea rows="10" id="queja" placeholder="Añade la observación..."></textarea>
+    <div class="buttons">
+        <input class="archivo" type="file">
+        <button type="submit"> Añadir observacion <i class="fa-solid fa-plus"></i></button>
+    </div>
 </form>
 
 <!--Footer de la página-->

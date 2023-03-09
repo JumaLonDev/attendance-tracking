@@ -1,7 +1,10 @@
-.formularioR{background-color:#eceeeb; width: 30%; height: 400px ; position: relative; left: 35%; margin: 2% 0 2% 0; border-radius: 15px; border: 2px solid #7d6f8f; padding: 1%; display: flex; flex-direction: column; align-items: center; justify-content: space-around;}
+.mainFormu {width: 100%; display: flex; justify-content: center; align-items: center;}
+.formularioR{ width: 40rem; height: 70vh ; position: relative; margin: 2% 0 2% 0; border-radius: 15px; border: 2px solid orange; padding: 1%; display: flex; flex-direction: column; align-items: center; justify-content: space-around; box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.496);}
 .titulo{font-weight: bold; font-size: 30px;}
 .formularioR input{ border: none; width: 80%; height: 24px; padding: 1%;  outline: none; border: none; border-bottom: #9e8bf4 2px solid; background-color: transparent; }
+.buttons{display: flex; width: 100%; justify-content: end;}
 .formularioR input:focus::placeholder{opacity: .7;}
-.formularioR button{ width: 80%; height: 25px; color: #eceeeb; background-color: #7d6f8f; border: none; cursor: pointer;}
-#adminConfig{text-decoration: none; color: black; font-size: small; position:relative; left: 15%; }
-#adminConfig:hover{ border-bottom: 1px solid;}
+.buttons button{ width: 35%; height: 25px; color: #eceeeb; background-color: #7d6f8f; border: none; cursor: pointer; border-radius: 15px; margin-left: 1%; transform: scale(1); transition: all .3s linear;}
+a{text-align: center; color: #eceeeb; text-decoration: none;}
+#adminConfig{display: none;}
+.buttons button:hover{transform: scale(.9);}

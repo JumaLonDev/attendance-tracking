@@ -1,20 +1,36 @@
 .encabezado{ margin: 2% 0 2% 0;  display: flex; justify-content: space-between; width:80%; position: relative; left: 10%;}
-.fecha h2{background-color: black; color: white; font-size: 18px; font-weight: 100; text-align: center;}
+.fecha h2{background-color: black; border-radius: 15px; color: white; font-size: 18px; font-weight: 100; text-align: center;}
 .fecha h3{ padding: 5px; }
 table{ width: 80%; position: relative; left: 10%; font-size: 20px;}
-th{margin: 5%; background-color: black; color: white; height: 50px;}
+th{margin: 5%;border-radius: 10px; background-color: black; color: white; height: 50px;}
 td{ text-align: center; height: 40px;}
 .book:hover{cursor: pointer; color: #9e8bf4;}
-tr:hover{box-shadow:8px 3px 20px 6px rgba(131, 91, 172, 0.6); }
-#observacion{width: 80%; background-color:#eceeeb; position: absolute; top: 23%; left: 10%; flex-direction: column;
-padding: 1%;  height: 300px; justify-content: space-around; margin-bottom: 1%;}
-.cerrar{font-size: 20px; cursor: pointer; position: absolute; left: 97%; top: 9%;}
+tr:hover{box-shadow:8px 3px 20px 6px rgba(131, 91, 172, 0.6);border-radius: 10px;}
+#observacion{width: 80%; background-color:#eceeeb; position: absolute; top: 25%; left: 10%; flex-direction: column;
+padding: 1%;  height: 40vh; margin-bottom: 1%; border-radius: 15px; box-shadow: 0px 0px 10px 2px gray;  animation-name: observacion;
+animation-duration: 2s; animation-timing-function: ease-in-out;animation-delay: 1;animation-direction: normal;}
+.cerrar{font-size: 20px; cursor: pointer; position: absolute; left: 97%; top: 8%;}
 .cerrar:hover{color: red;}
-#observacion button{font-size: 12px;background-color: #e29226; display: flex; width: 15%; justify-content: space-around; align-items: center; padding: 1%; position: relative; left: 85%; border: none; margin-top: 5px; cursor: pointer;}
-#observacion textarea{padding:1%}
+.buttons{display: flex; flex-direction: row; justify-content: space-around;}
+.buttons button{font-size: 12px;background-color: #e29226; display: flex; width: 15%; justify-content: space-around; align-items: center; padding: .8%; position: relative; left: 10%; border: none; border-radius: 15px; margin-top: 5px; cursor: pointer;}
+#observacion textarea{padding:1%; margin-top: 1%; background: none; border: none;}
 .observacion__activo{display: flex;}
 .observacion__inactivo{display: none;}
 .guardar{display: flex;position: relative; width: 80%;margin: 2% 0 2% 0; left:10%; justify-content: end;}
-.guardar button{ height: 35px; background-color:#e29226; color: white; padding: 5px; border: none; transition: 1s ease-out}
+.guardar button{ height: 35px; background-color:#e29226; border-radius: 15px; color: white; padding: 5px; border: none; transition: 1s ease-out}
 .guardar button:hover{cursor: pointer; background-color: #9e8bf4;}
+.buttons button:hover{background-color: #feaf48;}
+.archivo{margin-top: 10px;}
 
+/*Animacion de observaciones*/
+@keyframes observacion {
+    0% {
+      opacity: 0.25;
+      transform: translateY(-100px);
+    }
+    20%,80% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+  }

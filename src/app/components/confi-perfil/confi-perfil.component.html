@@ -1,17 +1,19 @@
 <!--Menú de navegación-->
 <app-navbar></app-navbar>
-
-<form action="" class="formularioR" [formGroup]="formularioR">
-  <h2 class="titulo">Configuración</h2>
-  <input class="Ncontracto" type="text" placeholder="Número de contrato" />
-  <input class="NombreC" type="text" placeholder="Nombre completo" />
-  <input id="email" class="email" type="email" placeholder="Correo" />
-  <input class="password" type="password" placeholder="Contraseña" />
-  <input class="RPassword" type="password" placeholder="Confirmar contraseña" />
-  <button type="submit">Actualizar</button>
-  <!--Configuraciones administrativas serán habilitadas cuando un usuario sea administrador-->
-  <a routerLink="../confi-administrativa" id="adminConfig">Configuración administrativa</a>
-</form>
-
+<div class="mainFormu">
+  <form action="" class="formularioR" [formGroup]="formularioR">
+    <h2 class="titulo">Mi Cuenta</h2>
+    <input class="Ncontracto" type="text" placeholder="Número de contrato" />
+    <input class="NombreC" type="text" placeholder="Nombre completo" />
+    <input id="email" class="email" type="email" placeholder="Correo" />
+    <input class="password" type="password" placeholder="Contraseña" />
+    <input class="RPassword" type="password" placeholder="Confirmar contraseña" />
+    <div class="buttons">  
+    <button type="submit">Actualizar</button>
+    <!--Configuraciones administrativas serán habilitadas cuando un usuario sea administrador-->
+    <button id="adminConfig"><a routerLink="../confi-administrativa">Configuración administrativa</a></button>
+  </div>
+  </form>
+</div>
 <!--Footer de la página-->
 <app-footer></app-footer>
