@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfiPerfilComponent } from './components/confi-perfil/confi-perfil.component';
 import { ConfiAdministrativaComponent } from './components/confi-administrativa/confi-administrativa.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 //Fin Servicios
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ConfiAdministrativaComponent } from './components/confi-administrativa/
     StarPaginaComponent,
     FooterComponent,
     ConfiPerfilComponent,
-    ConfiAdministrativaComponent
+    ConfiAdministrativaComponent,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,

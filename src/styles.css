@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; resize: none;}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Raleway', sans-serif; resize: none;}
 .error{color: red;}
+

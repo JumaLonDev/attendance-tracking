@@ -79,11 +79,11 @@ window.addEventListener('load', ()=>{
            
         }else if(passwordValue.length < 8)
         {
-            failValidation(password, 'Debe tener minimo 8 caracterez');
+            failValidation(password, 'Debe tener minimo 8 caracteres');
            
         }else if(!passwordValue.match(er))
         {
-            failValidation(password, 'Debe tener una mayuscula, minusculas y numeros');
+            failValidation(password, 'Debe tener una mayúscula, minúsculas y números');
            
         }else{
             okValidation(password, '');
@@ -94,10 +94,10 @@ window.addEventListener('load', ()=>{
             failValidation(Ncontrato, "Campo en blanco");
             
         }else if(NcontractoValue.length < 8){
-            failValidation(Ncontrato, 'Debe tener minimo 8 caracterez');
+            failValidation(Ncontrato, 'Debe tener minimo 8 caracteres');
            
         }else if(!NcontractoValue.match(er)){
-            failValidation(Ncontrato, 'Debe tener una mayuscula, minusculas y numeros');
+            failValidation(Ncontrato, 'Debe tener una mayúscula, minúsculas y números');
            
         }else{
             okValidation(Ncontrato, '');
@@ -109,7 +109,7 @@ window.addEventListener('load', ()=>{
             failValidation(NombreC, 'El campo está en blanco');
            
         }else if(isNaN(NombreCValue)){
-            failValidation(Ncontrato, 'El nombre no puede contener núemros');
+            failValidation(Ncontrato, 'El nombre no puede contener números');
            
         }else {
             okValidation(Ncontrato, '');

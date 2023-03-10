@@ -9,6 +9,7 @@ import { StarPaginaComponent } from './components/star-pagina/star-pagina.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { ConfiPerfilComponent } from './components/confi-perfil/confi-perfil.component';
 import { ConfiAdministrativaComponent } from './components/confi-administrativa/confi-administrativa.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'star-pagina'},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'pqrs', component:PqrsComponent},
   {path:'footer', component:FooterComponent},
   {path:'confi-perfil', component:ConfiPerfilComponent},
-  {path:'confi-administrativa', component:ConfiAdministrativaComponent}
+  {path:'confi-administrativa', component:ConfiAdministrativaComponent},
+  {path:'nosotros', component:NosotrosComponent}
 ];
 
 @NgModule({
