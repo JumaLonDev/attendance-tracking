@@ -28,4 +28,4 @@ window.addEventListener('load', () => {
     })
      // Fin Funcionalidad a los botones 
 })
-// Fin esperar que la p+agina está cargada 
+// Fin esperar que la pagina está cargada 

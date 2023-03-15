@@ -1,4 +1,4 @@
-.pies{position: absolute; top: 80%; width: 100%; margin-top: 2%; }
+.pies{position:sticky; top: 80%; width: 100%; margin-top: 2%; }
 footer{width: 100%; height: auto; display:flex; border-top: 3px solid#7d6f8f; position: relative; top: -100%; background-color: #eceeeb; justify-content: space-around; margin-top: 3%;}
 .logo img{position: relative; width: 100%; height: 8rem; display: flex; justify-content: center; justify-items: center; left:1%;}
 .footer1{ width: 20%; padding: 1%; position: relative; font-size: 13px;}
@@ -10,6 +10,5 @@ h2{font-size: 15px; text-align: center; border-bottom: 3px solid #e29226;}
 @media only screen and (max-width:715px){
     h2{font-size: 10;}
     footer{align-items: center; height: auto; font-size: 1px;}
-    
     
 }

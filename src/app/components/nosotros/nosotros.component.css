@@ -1,12 +1,20 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
-.container{max-width: 1200px;margin: auto;margin-top: 40px;perspective: 1000px;display: flex;flex-wrap: wrap;}
-.card__father{margin: 20px;perspective: 1000px;}
+.container{max-width: 1200px;margin: auto; margin-top: 100px;perspective: 1000px;display: flex;flex-wrap: wrap;}
+.card__father{margin: 20px;perspective: 1000px; z-index: -1;}
 .card__father:hover .card{ transform: rotateY(180deg);}
-.card{width: 200px;height: 250px;position: relative;transform-style: preserve-3d;transition: all 600ms;}
+.card{width: 200px;height: 250px;position: relative;transform-style: preserve-3d;transition: all 600ms; }
 .frente{background-size: cover;background-position: center;  }
 .frente,.atras{width: 100%;height: 100%;position: absolute;top: 0;left: 0;backface-visibility: hidden;transform-style: preserve-3d;border-radius: 20px;}
-.atras{transform: rotateY(180deg);background: white;}
+.atras{transform: rotateY(180deg);background: rgb(215, 195, 224);}
 .cuerpoF{width: 100%;height: 100%;text-align: center;padding: 40px;display: flex;justify-content: center;align-items: center;color: #fff;transform: translateZ(60px);}
 .bg{width: 100%;height: 100%;position: relative;top: 0;left: 0;background: rgba(0, 0, 0, 0.333);border-radius: 20px;}
 .cuerpoA{padding: 40px;text-align: center;transform: translateZ(60px);}
 .cuerpoA p{margin-top: 30px;font-size: 18px;}
+
+/*mision y vision*/
+.contenedor{display: flex; align-items: center; justify-content: center; margin-top: 150px; }
+.valores {width: 30%; height: 200px; border: blueviolet 2px solid; border-radius: 15px; text-align: center; padding: 2%; margin: 30px; display: inline-block; box-shadow: 3px 0px 5px 2px rgba(128, 128, 128, 0.488);}
+h2{padding-bottom: 5px;}
+
+
+
