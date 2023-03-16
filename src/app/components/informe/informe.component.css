@@ -1,0 +1,11 @@
+.encabezado{ margin: 2% 0 2% 0;  display: flex; justify-content: space-between; width:80%; position: relative; left: 10%; z-index: -1;}
+.fecha h2{background-color: black; border-radius: 15px; color: white; font-size: 18px; font-weight: 100; text-align: center;}
+.fecha h3{ padding: 5px; }
+
+table{ width: 80%; position: relative; left: 10%; font-size: 20px; z-index: -1;}
+th{margin: 5%; background-color: black; color: white; height: 50px; border-radius: 15px;}
+td{ text-align: center; height: 40px; border-bottom: 1px black solid; padding: 15px;}
+.guardar{position: relative; margin: 2%; display: grid; place-items: center;}
+.guardar button{width: 15%; height: 35px; background-color: #e29226; color: white; padding: 5px; border:none; border-radius: 12px; font-size: 15px;}
+.guardar button:hover{cursor: pointer; background-color: transparent; border: 1px #e29226 solid; color: #e29226;}
+

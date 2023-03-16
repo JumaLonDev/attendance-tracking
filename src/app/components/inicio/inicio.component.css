@@ -14,7 +14,7 @@ form input[type=number]:focus::placeholder{opacity: .7;}
 .error{margin-bottom:5%; font-weight: bold;}
 .agregar{ height: 2rem; padding: 2%; background-color: #e29226; border: #e29226; transition: 1s ease-out; border-radius: 15px ;}
 .agregar:hover{ cursor: pointer; background-color: #9e8bf4; color: white;}
-.add{display: flex;  background-color: #e29226; width: 50px; position: fixed; height: 50px; justify-content: center;align-items: center; font-size: 25px; border-radius: 30px; left: 85%; top: 68%; transition: 1s ease-out; border: none; z-index: 1; }
+.add{display: flex;  background-color: #e29226; width: 50px; position: fixed; height: 50px; justify-content: center;align-items: center; font-size: 25px; border-radius: 30px; left: 85%; top: 68%; transition: 1s ease-out; border: none; z-index: -1; }
 .add:hover{cursor: pointer; background-color: #9e8bf4; color: white;}
 
 @media only screen and(max-width: 1039px){

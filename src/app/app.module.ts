@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ConfiPerfilComponent } from './components/confi-perfil/confi-perfil.component';
 import { ConfiAdministrativaComponent } from './components/confi-administrativa/confi-administrativa.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { InformeComponent } from './components/informe/informe.component';
 //Fin Servicios
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
     FooterComponent,
     ConfiPerfilComponent,
     ConfiAdministrativaComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    InformeComponent
   ],
   imports: [
     BrowserModule,

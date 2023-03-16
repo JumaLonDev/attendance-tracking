@@ -1,8 +1,2 @@
-p{ text-align: center; margin: 3%; font-size: 30px; font-weight: bold; border-bottom: 1px solid black;}
-table{ width: 80%; position: relative; left: 10%;  box-shadow:5px 3px 20px 6px rgb(3, 5, 5); font-size: 20px; }
-th{margin: 5%; background-color: black; color: white; height: 50px;}
-td{ text-align: center; height: 40px;}
-.guardar{display: flex;position: relative; width: 80%;margin: 2%; left:10%; justify-content: center; }
-.guardar button{ height: 35px; background-color: rgba(206, 1, 206, 1); color: white; padding: 5px;}
-.guardar button:hover{cursor: pointer; box-shadow: 3px 3px 3px 3px black;}
+
 
