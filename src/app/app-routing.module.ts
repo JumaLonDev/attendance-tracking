@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { AuthGuard } from './guards/auth.guard';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { AsistenciaComponent } from './components/asistencia/asistencia.component';
@@ -11,20 +12,20 @@ import { ConfiPerfilComponent } from './components/confi-perfil/confi-perfil.com
 import { ConfiAdministrativaComponent } from './components/confi-administrativa/confi-administrativa.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { InformeComponent } from './components/informe/informe.component';
+import { RolesguardsGuard } from './guards/rolesguards.guard';
 
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'star-pagina'},
   {path:'star-pagina', component: StarPaginaComponent},
-  {path:'inicio', component: InicioComponent},
-  {path:'asistencia', component: AsistenciaComponent},
+  {path:'inicio', component: InicioComponent, canActivate:[AuthGuard]},
+  {path:'asistencia/:id', component: AsistenciaComponent, canActivate:[AuthGuard, RolesguardsGuard]},//
   {path:'inicio-registro', component:InicioRegistroComponent},
-  {path: 'historial', component:HistorialComponent},
-  {path:'pqrs', component:PqrsComponent},
-  {path:'footer', component:FooterComponent},
-  {path:'confi-perfil', component:ConfiPerfilComponent},
-  {path:'confi-administrativa', component:ConfiAdministrativaComponent},
-  {path:'nosotros', component:NosotrosComponent},
-  {path: 'informe', component:InformeComponent }
+  {path: 'historial', component:HistorialComponent, canActivate:[AuthGuard, RolesguardsGuard]},//
+  {path:'pqrs', component:PqrsComponent, canActivate:[AuthGuard]},
+  {path:'confi-perfil', component:ConfiPerfilComponent, canActivate:[AuthGuard]},
+  {path:'confi-administrativa', component:ConfiAdministrativaComponent, canActivate:[AuthGuard, RolesguardsGuard]},//
+  {path:'nosotros', component:NosotrosComponent, canActivate:[AuthGuard]},
+  {path: 'informe', component:InformeComponent, canActivate:[AuthGuard] }
 ];
 
 @NgModule({

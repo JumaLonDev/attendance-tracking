@@ -1,69 +1,56 @@
 <app-navbar></app-navbar>
-<div class="encabezado">
+<body>
+  <div class="encabezado">
     <div class="curso">
-        <h2 class="numCurso">2473196</h2>
-        <h3>Análisis y Desarrollo de Software</h3>
+      <h2 class="numCurso">2473196</h2>
+      <h3>Análisis y Desarrollo de Software</h3>
     </div>
     <div class="fecha">
-        <h2>Fecha</h2>
-        <h3>28/11/2022<i class="fa-solid fa-calendar-days"></i></h3>
+      <h2>Fecha</h2>
+      <h3 class="date">{{fe}}<i class="fa-solid fa-calendar-days"></i></h3>
     </div>
-</div>
+  </div>
 
-<table>
+  <table>
     <thead class="head">
-        <th>Alumnos</th>
-        <th>Asistió</th>
-        <th>No Asistió</th>
-        <th>Observación</th>
+      <th>Alumnos</th>
+      <th>Asistió</th>
+      <th>No Asistió</th>
+      <th>Observación</th>
     </thead>
-    <tr>
-        <td>Tatiana Mosquera</td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><i class="fa-solid fa-book book" (click)="addObservacion('abrir')"></i></td>
+    <tr *ngFor="let student of Courses">
+      <td>{{ student.nombre }} {{ student.apellido }}</td>
+      <td><input type="checkbox" /></td>
+      <td><input type="checkbox" /></td>
+      <td>
+        <i class="fa-solid fa-book book" (click)="addObservacion('abrir')"></i>
+      </td>
     </tr>
-    <tr>
-        <td>Lorena Quiceno</td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><i class="fa-solid fa-book"></i></td>
-    </tr>
-    <tr>
-        <td>Elizabeth Sanmartin</td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><i class="fa-solid fa-book"></i></td>
-    </tr>
-    <tr>
-        <td>Juan Guillermo</td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><i class="fa-solid fa-book"></i></td>
-    </tr>
-    <tr>
-        <td>Juan Manuel Londoño</td>
-        <td><input type="checkbox"></td>
-        <td><input type="checkbox"></td>
-        <td><i class="fa-solid fa-book"></i></td>
-    </tr>
-</table>
+  </table>
 
-<div class="guardar">
+  <div class="guardar">
     <button type="submit">Guardar</button>
-</div>
-
-<!--Observaciones-->
-<form action="" class="observacion__inactivo" id="observacion">
-    <i class="fa-regular fa-circle-xmark cerrar" (click)="addObservacion('cerrar')"></i>
-    <h3 for="">Tatiana Mosquera</h3>
-    <textarea rows="10" id="queja" placeholder="Añade la observación..."></textarea>
+  </div>
+  <!--Observaciones-->
+  <form action="" class="observacion__inactivo" id="observacion">
+    <i
+      class="fa-regular fa-circle-xmark cerrar"
+      (click)="addObservacion('cerrar')"
+    ></i>
+    <h3 for=""></h3>
+    <textarea
+      rows="10"
+      id="queja"
+      placeholder="Añade la observación..."
+    ></textarea>
     <div class="buttons">
-        <input class="archivo" type="file">
-        <button type="submit"> Añadir observacion <i class="fa-solid fa-plus"></i></button>
+      <input class="archivo" type="file" />
+      <button type="submit">
+        Añadir observacion <i class="fa-solid fa-plus"></i>
+      </button>
     </div>
-</form>
+  </form>
 
-<!--Footer de la página-->
-
+  <!--Footer de la página-->
+</body>
 <app-footer></app-footer>

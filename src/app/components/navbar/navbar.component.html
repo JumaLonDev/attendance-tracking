@@ -1,7 +1,8 @@
 <nav class="navnormal">
     <div class="logo"><img src="../../../assets/images/LoguitoAT-1(1).png"></div>
     <div class="perfil">
-        <p>Juan Manuel Londoño</p>
+        <i class="fa-solid fa-right-from-bracket" (click)="logout()"></i>
+        <p>{{userName}} {{lastName}}</p>
         <i class="fa-solid fa-gear confi" routerLink="../confi-perfil"></i>
     </div>
     <input type="checkbox" id="chbox">
@@ -10,6 +11,6 @@
         <li><a routerLink="/inicio">Inicio</a></li>
         <li><a routerLink="/pqrs">PQRS</a></li>
         <li><a routerLink="/informe">Informe</a></li>
-        <li><a routerLink="/historial">Historial</a></li>
+        <li *ngIf="rolUser === Aroles[0] || rolUser === Aroles[1]"><a routerLink="/historial">Historial</a></li>
     </ul>
 </nav>

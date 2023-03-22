@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { ConfiPerfilComponent } from './components/confi-perfil/confi-perfil.com
 import { ConfiAdministrativaComponent } from './components/confi-administrativa/confi-administrativa.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { InformeComponent } from './components/informe/informe.component';
+import { CommonModule } from '@angular/common';
 //Fin Servicios
 
 @NgModule({
@@ -38,10 +41,14 @@ import { InformeComponent } from './components/informe/informe.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule, 
+    CommonModule
   ],
   providers: [
-    CargarScriptsService
+    CargarScriptsService,
+    {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })

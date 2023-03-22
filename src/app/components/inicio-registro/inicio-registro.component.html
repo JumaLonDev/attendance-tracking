@@ -18,16 +18,16 @@
             <!---- Inico de sesión ---->
             <div class="loginRegistro">
                 <div class="login">
-                    <form action="" class="formularioL">
+                    <form [formGroup]="UsuarioForm" class="formularioL" (ngSubmit)="logear()">
                         <div class="titulo">
                             <h2>Inicio de sesión</h2>
                         </div>
                             <div form>
-                                <input class="emailL" type="email" placeholder="Correo">
+                                <input formControlName="email" class="emailL" type="email" placeholder="Correo">
                                 <label class="error"></label>
                             </div>
                             <div form>
-                                <input class="passwordL" type="password" placeholder="Contraseña">
+                                <input formControlName ="password" class="passwordL" type="password" placeholder="Contraseña">
                                 <label class="error"></label>
                             </div>
                         <button  type="submit">Ingresar</button>
@@ -36,24 +36,40 @@
     
                 <!---- Registro ---->
                 <div class="registro">
-                    <form action="" class="formularioR">
+                    <form [formGroup]="UsuarioForm" class="formularioR" (ngSubmit)="registrase()">
                         <div class="titulo">
                             <h2>¡Registrate!</h2>
                         </div>
                         <div form>
-                            <input class="Ncontracto" type="text" placeholder="Número de contrato">
+                            <input class="NombreC" type="text" placeholder="Nombre" formControlName="nombre">
                             <label class="error"></label>
                         </div>
                         <div form>
-                            <input class="NombreC" type="text" placeholder="Nombre completo">
+                            <input class="ApellidoC" type="text" placeholder="Apellido" formControlName="apellido">
                             <label class="error"></label>
                         </div>
                         <div form>
-                            <input id="email" class="email" type="email" placeholder="Correo">
+                            <input id="email" class="email" type="email" placeholder="Correo" formControlName="email">
                             <label class="error"></label>
                         </div>
                         <div form>
-                            <input class="password" type="password" placeholder="Contraseña">
+                            <input id="email" class="email" type="email" placeholder="Correo de respaldo" formControlName="correo_respaldo">
+                            <label class="error"></label>
+                        </div>
+                        <div form>
+                            <input class="Ndocumento" type="text" placeholder="Número de Documento" formControlName="num_documento">
+                            <label class="error"></label>
+                        </div>
+                        <div form>
+                            <input class="Ncontrato" type="text" placeholder="Número de contrato" formControlName="num_contrato">
+                            <label class="error"></label>
+                        </div>
+                        <div form>
+                            <input class="Ncontacto" type="text" placeholder="Número de contacto" formControlName="num_contacto">
+                            <label class="error"></label>
+                        </div>
+                        <div form>
+                            <input class="password" type="password" placeholder="Contraseña" formControlName = "password">
                             <label class="error"></label>
                         </div>
                         <div form>
@@ -66,8 +82,6 @@
             </div>
         </div>
     </main>  
-
-    <app-footer></app-footer>
 </body>
 
 
