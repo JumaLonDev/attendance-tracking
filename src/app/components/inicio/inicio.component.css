@@ -1,10 +1,10 @@
 .main{min-height: 56.5vh;}
 .cards{position: relative;display: flex; flex-wrap:wrap; flex-direction: row;}
-.card{width: 25%; height: 25vh; margin-top: 5vh; border-radius: 15px; box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.685); padding: 2%; margin-left: 6%; cursor: pointer; transition: .5s all linear; transform: scale(1)}
+.card{width: 25%; height: 25vh; margin-top: 5vh; border-radius: 15px; box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.685); padding: 2%; margin-left: 6%;  transition: .5s all linear; transform: scale(1)}
 .card-body i{position: relative;left: 85%;}
 .delete{font-size: 20px; cursor: pointer;}
 .delete:hover{color: red;}
-.card-header{border-bottom: 2px solid #9e8bf4; margin-bottom: 2vh;}
+.card-header{border-bottom: 2px solid #9e8bf4; margin-bottom: 2vh; cursor: pointer;}
 .card:hover{transform: scale(1.2);}
 /*Formulario para agregar ficha*/
 form{background-color:#ededed; width: 425px; display: flex; align-items: center; justify-content: center; position: absolute ; left: 35%; border-radius: 5%; flex-direction: column; border: #9e8bf4 solid 1px; top: 25%; animation-name: agregar;
@@ -21,10 +21,9 @@ form input:focus::placeholder{opacity: .7;}
 .add{display: flex;  background-color: #e29226; width: 50px; position: fixed; height: 50px; justify-content: center;align-items: center; font-size: 25px; border-radius: 30px; left: 85%; top: 65%; transition: 1s ease-out; border: none; }
 .add:hover{cursor: pointer; background-color: #9e8bf4; color: white;}
 .subscribe{width: 350px; min-height: 25vh;}
-
-@media only screen and(max-width: 1039px){
-    .card{background-color: aqua;}
-}
+.custom-select {-webkit-appearance: none;-moz-appearance: none;appearance: none;border: none;width: 43%;cursor: pointer;outline: none;margin-bottom: 2%; border-bottom: #9e8bf4 2px solid; height: 25px;}
+.custom-select option {background-color: #fff; padding: 3%;cursor: pointer;}
+.custom-select option:hover {background-color: #eee;}
 
 @keyframes agregar{
     0% {

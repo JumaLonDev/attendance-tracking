@@ -1,8 +1,9 @@
+import { animation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
-import { CargarScriptsService } from '../../services/cargar-scripts.service';
+//import { CargarScriptsService } from '../../services/cargar-scripts.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-inicio-registro',
@@ -11,8 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class InicioRegistroComponent implements OnInit {
   UsuarioForm: FormGroup;
-  constructor(private _CargarScripts:CargarScriptsService, private fb: FormBuilder, private userService: UsuarioService, private router: Router, private Aroute: ActivatedRoute) {
-      _CargarScripts.Carga(["animation"]);
+  constructor(private fb: FormBuilder, private userService: UsuarioService, private router: Router, private Aroute: ActivatedRoute) {
 
       this.UsuarioForm = this.fb.group({
         email:['', Validators.required], 
@@ -22,7 +22,8 @@ export class InicioRegistroComponent implements OnInit {
         num_documento:['', Validators.required], 
         num_contrato:['', Validators.required], 
         num_contacto:['', Validators.required],
-        correo_respaldo: ['', Validators.required]
+        correo_respaldo: ['', Validators.required],
+        animation:['', Validators.required]
       });
     // Variables animation
    };
@@ -31,6 +32,25 @@ export class InicioRegistroComponent implements OnInit {
    ngOnInit(): void {
     localStorage.removeItem('token');
   }
+  Animacion(opcion: string){
+    switch(opcion){
+      case 'iniciarsesion':
+      document.getElementById('loginRegistro')?.classList.remove('lgr');
+      document.getElementById('registro')?.classList.remove('registroActivo');
+      document.getElementById('registro')?.classList.add('registroInactivo');
+      document.getElementById('login')?.classList.remove('loginInactivo');
+      document.getElementById('login')?.classList.add('loginActivo');
+      break;
+      case 'registrarse':
+      document.getElementById('loginRegistro')?.classList.add('lgr');
+      document.getElementById('login')?.classList.remove('loginActivo');
+      document.getElementById('login')?.classList.add('loginInactivo');
+      document.getElementById('registro')?.classList.remove('registroInactivo');
+      document.getElementById('registro')?.classList.add('registroActivo');
+      break;
+    }
+  }
+  // Fin animacion
   
   logear(): void {
    const dataUser: any = {

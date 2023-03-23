@@ -2,8 +2,8 @@
 <body>
   <div class="encabezado">
     <div class="curso">
-      <h2 class="numCurso">2473196</h2>
-      <h3>Análisis y Desarrollo de Software</h3>
+      <h2 class="numCurso">{{curso_name}}</h2>
+      <h3>{{curso_number}}</h3>
     </div>
     <div class="fecha">
       <h2>Fecha</h2>
@@ -17,38 +17,28 @@
       <th>Asistió</th>
       <th>No Asistió</th>
       <th>Observación</th>
+      <th>Guardar</th>
     </thead>
     <tr *ngFor="let student of Courses">
       <td>{{ student.nombre }} {{ student.apellido }}</td>
       <td><input type="checkbox" /></td>
       <td><input type="checkbox" /></td>
       <td>
-        <i class="fa-solid fa-book book" (click)="addObservacion('abrir')"></i>
+        <i class="fa-solid fa-book book" (click)="addObservacion('abrir')" (click)="getUserById(student.id_usuario)"></i>
       </td>
+      <td><div class="guardar">
+        <button type="submit">Guardar</button>
+      </div></td>
     </tr>
   </table>
-
-  <div class="guardar">
-    <button type="submit">Guardar</button>
-  </div>
   <!--Observaciones-->
-  <form action="" class="observacion__inactivo" id="observacion">
+  <form action="" class="observacion__inactivo" id="observacion" [formGroup]="ObservacionForm">
     <i
       class="fa-regular fa-circle-xmark cerrar"
       (click)="addObservacion('cerrar')"
     ></i>
-    <h3 for=""></h3>
-    <textarea
-      rows="10"
-      id="queja"
-      placeholder="Añade la observación..."
-    ></textarea>
-    <div class="buttons">
-      <input class="archivo" type="file" />
-      <button type="submit">
-        Añadir observacion <i class="fa-solid fa-plus"></i>
-      </button>
-    </div>
+    <h3>{{userName}} {{lastnameUser}}</h3>
+    <textarea rows="10" id="queja" placeholder="Añade la observación..." formControlName = "queja"></textarea>
   </form>
 
   <!--Footer de la página-->

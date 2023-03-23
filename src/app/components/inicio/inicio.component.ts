@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import Swal from 'sweetalert2';
 import { CursoService } from 'src/app/services/curso/curso.service';
-import { Curso } from 'src/app/models/Cursos';
+import {DtllCurEstuService} from 'src/app/services/detalleCurso/dtll-cur-estu.service';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -12,6 +12,7 @@ import { Curso } from 'src/app/models/Cursos';
 })
 export class InicioComponent implements OnInit {
   ACursoForm: FormGroup;
+  SubsCurso: FormGroup;
   user: any; 
   id_user: any; 
   rolUser: any; 
@@ -19,13 +20,16 @@ export class InicioComponent implements OnInit {
   token = localStorage.getItem('token');
   Courses: any[] = [];
 
-  constructor(private fb: FormBuilder, private router:Router, private userService: UsuarioService, private courserSevice: CursoService){
+  constructor(private fb: FormBuilder, private router:Router, private userService: UsuarioService, private courserSevice: CursoService, private detalleCursoSubs: DtllCurEstuService){
     this.ACursoForm = this.fb.group({
       num_curso:['',Validators.required], 
       nom_curso: ['', Validators.required], 
       jornada_curso: ['', Validators.required],
       prof_curso:['', Validators.required]
     }); 
+    this.SubsCurso = this.fb.group({
+      cod_cursos:['', Validators.required]
+    })
   }
 
   ngOnInit(): void {
@@ -90,6 +94,38 @@ export class InicioComponent implements OnInit {
     }
   }
 
+  SubcribeCourse (){
+    const dataSubscribe = {
+      cod_cursos: this.SubsCurso.get('cod_cursos')?.value,
+      id_usuario: this.id_user
+    }
+    if(dataSubscribe.cod_cursos == ''){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al Susbcribirse',
+        text: 'Hay Campos vacios',
+      })
+    }else {
+      this.detalleCursoSubs.SubscribeCurseByUserStudent(dataSubscribe).subscribe(data => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Subscrición Exitoso',
+          text: 'Te has subscripto al curso exitosamente',
+        })
+        this.getCurses();
+        this.Addcurso('cerrar')
+      }, error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error al subscribirse el curso'
+        })
+        console.log(error);
+      return false;
+      })
+    }
+  }
+
   getCurses(){
     if(this.rolUser == this.Aroles[2]){
       this.courserSevice.getAllCourseByUser(this.id_user).subscribe(data => {
@@ -100,5 +136,25 @@ export class InicioComponent implements OnInit {
         this.Courses = data;
       })
     }
+  }
+  deleteCourseById(id_curso: any) {
+    this.courserSevice.deleteCourseById(id_curso).subscribe(data => {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Curso eliminado correctamente'
+      })
+    })
   }
 }

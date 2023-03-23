@@ -17,7 +17,7 @@ animation-duration: 2s; animation-timing-function: ease-in-out;animation-delay: 
 #observacion textarea{padding:1%; margin-top: 1%; background: none; border: none;}
 .observacion__activo{display: flex;}
 .observacion__inactivo{display: none;}
-.guardar{display: flex;position: relative; width: 80%;margin: 2% 0 2% 0; left:10%; justify-content: end;}
+.guardar{display: flex;position: relative; width: 80%;margin: 2% 0 2% 0; justify-content: center; align-items: center;}
 .guardar button{ height: 35px; background-color:#e29226; border-radius: 15px; color: white; padding: 5px; border: none; transition: 1s ease-out}
 .guardar button:hover{cursor: pointer; background-color: #9e8bf4;}
 .buttons button:hover{background-color: #feaf48;}
