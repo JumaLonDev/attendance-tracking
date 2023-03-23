@@ -21,7 +21,7 @@ img{width: 60%; margin-left: 60px;}
 #loginRegistro button{margin-top: 30px; padding: 8px 40px; border: none; color: white; background-color: rgb(147, 95, 147); cursor: pointer; font-weight: 600; border-radius: 5px; margin-left: 100px;}
 #loginRegistro button:hover{background-color: transparent; color: purple; border: 0.5px solid purple;}
 #login form h2, #login form button{margin-bottom: 50px;}
-#registro form{top: -70px;}
+#registro form{top: -19px;}
 
 .fondo button{margin-left: 100px;}
 

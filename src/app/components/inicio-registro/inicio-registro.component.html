@@ -53,16 +53,8 @@
                             <label class="error" *ngIf="UsuarioForm.get('email')?.invalid && (UsuarioForm.get('email')?.dirty || UsuarioForm.get('email')?.touched)">El correo requerido</label>
                         </div>
                         <div form>
-                            <input id="email" class="email" type="email" placeholder="Correo de respaldo" formControlName="correo_respaldo">
-                            <label class="error" *ngIf="UsuarioForm.get('correo_respaldo')?.invalid && (UsuarioForm.get('correo_respaldo')?.dirty || UsuarioForm.get('correo_respaldo')?.touched)">El correo de respaldo requerido</label>
-                        </div>
-                        <div form>
                             <input class="Ndocumento" type="text" placeholder="Número de Documento" formControlName="num_documento">
                             <label class="error" *ngIf="UsuarioForm.get('num_documento')?.invalid && (UsuarioForm.get('num_documento')?.dirty || UsuarioForm.get('num_documento')?.touched)">El número de documento es requerido</label>
-                        </div>
-                        <div form>
-                            <input class="Ncontrato" type="text" placeholder="Número de contrato" formControlName="num_contrato">
-                            <label class="error" *ngIf="UsuarioForm.get('num_contrato')?.invalid && (UsuarioForm.get('num_contrato')?.dirty || UsuarioForm.get('num_contrato')?.touched)">El número de contrato requerido</label>
                         </div>
                         <div form>
                             <input class="Ncontacto" type="text" placeholder="Número de contacto" formControlName="num_contacto">
@@ -71,9 +63,6 @@
                         <div form>
                             <input class="password" type="password" placeholder="Contraseña" formControlName = "password">
                             <label class="error" *ngIf="UsuarioForm.get('password')?.invalid && (UsuarioForm.get('password')?.dirty || UsuarioForm.get('password')?.touched)">La contraseña es requerida requerido</label>
-                        </div>
-                        <div form>
-                            <input class="RPassword" type="password" placeholder="Confirmar contraseña" formControlName="passwordRepead">
                         </div>
                             <button type="submit">Ingresar</button>
                     </form>

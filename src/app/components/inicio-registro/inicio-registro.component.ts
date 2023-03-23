@@ -20,9 +20,7 @@ export class InicioRegistroComponent implements OnInit {
         nombre:['', Validators.required], 
         apellido:['', Validators.required],
         num_documento:['', Validators.required], 
-        num_contrato:['', Validators.required], 
         num_contacto:['', Validators.required],
-        correo_respaldo: ['', Validators.required],
         animation:['', Validators.required]
       });
     // Variables animation
@@ -81,14 +79,12 @@ export class InicioRegistroComponent implements OnInit {
       nombre: this.UsuarioForm.get('nombre')?.value,
       apellido: this.UsuarioForm.get('apellido')?.value,
       correo: this.UsuarioForm.get('email')?.value, 
-      correo_respaldo: this.UsuarioForm.get('correo_respaldo')?.value,
       num_documento: this.UsuarioForm.get('num_documento')?.value, 
-      num_contrato: this.UsuarioForm.get('num_contrato')?.value, 
       num_contacto: this.UsuarioForm.get('num_contacto')?.value,
       contrasena: this.UsuarioForm.get('password')?.value
     }
 
-    if(dataUser.nombre == '' || dataUser.apellido =='' || dataUser.correo == '' || dataUser.correo_respaldo == '' || dataUser.num_documento == '', dataUser.num_contrato, dataUser.num_contacto == '', dataUser.contrasena == '' ){
+    if(dataUser.nombre == '' || dataUser.apellido =='' || dataUser.correo == '' || dataUser.num_documento == '' ||  dataUser.num_contacto == '', dataUser.contrasena == '' ){
       Swal.fire({
         icon: 'error',
         title: 'Error al registrase',
@@ -102,10 +98,21 @@ export class InicioRegistroComponent implements OnInit {
           text: 'Usurio registrado exitosamente',
         })
       }, error => {
-        Swal.fire({
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        
+        Toast.fire({
           icon: 'error',
-          title: 'Oops...',
-          text: 'Error al registrar el usuario'
+          title: 'Error al registrar el usuario'
         })
         return false;
       })
