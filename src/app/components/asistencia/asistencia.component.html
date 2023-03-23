@@ -14,23 +14,21 @@
   <table>
     <thead class="head">
       <th>Alumnos</th>
-      <th>Asistió</th>
-      <th>No Asistió</th>
+      <th>Inasistencia</th>
       <th>Observación</th>
-      <th>Guardar</th>
     </thead>
     <tr *ngFor="let student of Courses">
       <td>{{ student.nombre }} {{ student.apellido }}</td>
       <td><input type="checkbox" /></td>
-      <td><input type="checkbox" /></td>
       <td>
         <i class="fa-solid fa-book book" (click)="addObservacion('abrir')" (click)="getUserById(student.id_usuario)"></i>
       </td>
-      <td><div class="guardar">
-        <button type="submit">Guardar</button>
-      </div></td>
     </tr>
   </table>
+  <div class="guardar">
+    <button type="submit">Guardar</button>
+  </div>
+  
   <!--Observaciones-->
   <form action="" class="observacion__inactivo" id="observacion" [formGroup]="ObservacionForm">
     <i
