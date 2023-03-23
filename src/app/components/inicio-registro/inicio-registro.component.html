@@ -72,9 +72,6 @@
                             <input class="password" type="password" placeholder="Contraseña" formControlName = "password">
                             <label class="error" *ngIf="UsuarioForm.get('password')?.invalid && (UsuarioForm.get('password')?.dirty || UsuarioForm.get('password')?.touched)">La contraseña es requerida requerido</label>
                         </div>
-                        <div form>
-                            <input class="RPassword" type="password" placeholder="Confirmar contraseña" formControlName="passwordRepead">
-                        </div>
                             <button type="submit">Ingresar</button>
                     </form>
                 </div>

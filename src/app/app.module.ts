@@ -10,7 +10,6 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { AsistenciaComponent } from './components/asistencia/asistencia.component';
 import { InicioRegistroComponent } from './components/inicio-registro/inicio-registro.component';
 import { HistorialComponent } from './components/historial/historial.component';
-import { CargarScriptsService } from './services/cargar-scripts.service';
 import { PqrsComponent } from './components/pqrs/pqrs.component';
 import { StarPaginaComponent } from './components/star-pagina/star-pagina.component';
 import { FooterComponent } from './components/footer/footer.component'
@@ -46,7 +45,6 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   providers: [
-    CargarScriptsService,
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
     JwtHelperService
   ],

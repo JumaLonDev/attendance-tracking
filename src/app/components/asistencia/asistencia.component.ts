@@ -20,6 +20,7 @@ export class AsistenciaComponent implements OnInit {
   curso_name: any;
   curso_number: any;  
   ObservacionForm: FormGroup;
+  id_usuario:any;
 
   
 
@@ -69,14 +70,13 @@ export class AsistenciaComponent implements OnInit {
     })
   }
 
-  createAttendanceById(id_user: number){
+  createAttendanceById(){
     const dataAttendance:any = {
-      observacion: this.ObservacionForm.get('queja')?.value,
-      id_usuario: id_user,
-      id_curso: this.courseid
+      observacion: this.ObservacionForm.get('queja')?.value.this.id_usuario,
+      id_usuario: this.id_usuario,
+      id_curso: this.courseid,
     }
     this.asistenciaService.createNewAttendance(dataAttendance).subscribe(data => {
-
     })
 
   }
