@@ -3,16 +3,23 @@
 <div class="mainFormu">
   <form action="" class="formularioR" [formGroup]="formularioR">
     <h2 class="titulo">Mi Cuenta</h2>
-    <input class="Ncontracto" type="text" placeholder="Número de contrato" />
-    <input class="NombreC" type="text" placeholder="Nombre completo" />
-    <input id="email" class="email" type="email" placeholder="Correo" />
-    <input class="password" type="password" placeholder="Contraseña" />
-    <input class="RPassword" type="password" placeholder="Confirmar contraseña" />
-    <label for=""></label>
+    <input class="NombreC" type="text" placeholder="Nombre completo" formControlName="nombre"/>
+    <label class="error" *ngIf="formularioR.get('nombre')?.invalid && (formularioR.get('nombre')?.dirty || formularioR.get('nombre')?.touched)">El nombre requerido</label>
+    <input class="ApellidoC" type="text" placeholder="Apellido completo" formControlName="apellido"/>
+    <label class="error" *ngIf="formularioR.get('apellido')?.invalid && (formularioR.get('apellido')?.dirty || formularioR.get('apellido')?.touched)">El apellido es requerido</label>
+    <input id="email" class="email" type="email" placeholder="Correo"  formControlName="correo"/>
+    <label class="error" *ngIf="formularioR.get('correo')?.invalid && (formularioR.get('correo')?.dirty || formularioR.get('correo')?.touched)">El correo es requerido</label>
+    <input id="email" class="email" type="email" placeholder="Correo Respaldo (Opcional)" formControlName="correo_respaldo"/>
+    <input type="text" placeholder="Numero de documento" formControlName="num_documento">
+    <label class="error" *ngIf="formularioR.get('num_documento')?.invalid && (formularioR.get('num_documento')?.dirty || formularioR.get('num_documento')?.touched)">El número del documento es es requerido</label>
+    <input class="Ncontracto" type="text" placeholder="Número de contrato (Opcional)" formControlName="num_contrato"/>
+    <input type="text" placeholder="Número de contacto" formControlName="num_contacto"/>
+    <label class="error" *ngIf="formularioR.get('num_contacto')?.invalid && (formularioR.get('num_contacto')?.dirty || formularioR.get('num_contacto')?.touched)">El número de contacto es requerido</label>
+
     <div class="buttons">  
-    <button type="submit">Actualizar</button>
+    <button type="submit" (click)="updateUserById()">Actualizar</button>
     <!--Configuraciones administrativas serán habilitadas cuando un usuario sea administrador-->
-    <button id="adminConfig"><a routerLink="../confi-administrativa">Configuración administrativa</a></button>
+    <button id="adminConfig"*ngIf="data.id_rol== Roles[0]"><a routerLink="../confi-administrativa">Configuración administrativa</a></button>
   </div>
   </form>
 </div>

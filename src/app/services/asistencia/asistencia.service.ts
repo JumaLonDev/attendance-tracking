@@ -28,7 +28,7 @@ export class AsistenciaService {
     return this.http.get(this.URL + id,this.httpOptions)
   }
 
-  createNewAttendance(asistencia: Asistencia): Observable<any> {
+  createNewAttendance(asistencia: any[]): Observable<any> {
     return this.http.post(this.URL,asistencia, this.httpOptions)
   }
   updateAttendanceById(id: string, asistencia: Asistencia): Observable <any> {

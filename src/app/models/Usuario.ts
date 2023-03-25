@@ -12,11 +12,11 @@ export class Usuario{
     num_contrato?: string; 
     num_contacto: string; 
     id_rol: string; 
-    contrasena: string; 
+    contrasena?: string; 
     estado_usuario: string; 
 
 
-    constructor(nombre: string, apellido: string, correo: string, num_documento: string,  num_contacto: string, id_rol: string, contrasena: string, estado_usuario: string) {
+    constructor(nombre: string, apellido: string, correo: string, num_documento: string,  num_contacto: string, id_rol: string, estado_usuario: string) {
         
         this.nombre =  nombre; 
         this.apellido = apellido; 
@@ -24,7 +24,6 @@ export class Usuario{
         this.num_documento = num_documento; 
         this.num_contacto = num_contacto; 
         this.id_rol = id_rol; 
-        this.contrasena = contrasena; 
         this.estado_usuario = estado_usuario;         
     }
 };

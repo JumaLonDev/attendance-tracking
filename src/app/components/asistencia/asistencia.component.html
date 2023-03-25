@@ -2,42 +2,59 @@
 <body>
   <div class="encabezado">
     <div class="curso">
-      <h2 class="numCurso">{{curso_name}}</h2>
-      <h3>{{curso_number}}</h3>
+      <h2 class="numCurso">{{ curso_name }}</h2>
+      <h3>{{ curso_number }}</h3>
     </div>
     <div class="fecha">
       <h2>Fecha</h2>
-      <h3 class="date">{{fe}}<i class="fa-solid fa-calendar-days"></i></h3>
+      <h3 class="date">{{ fe }}<i class="fa-solid fa-calendar-days"></i></h3>
     </div>
   </div>
 
-  <table>
-    <thead class="head">
-      <th>Alumnos</th>
-      <th>Inasistencia</th>
-      <th>Observación</th>
-    </thead>
-    <tr *ngFor="let student of Courses">
-      <td>{{ student.nombre }} {{ student.apellido }}</td>
-      <td><input type="checkbox" /></td>
-      <td>
-        <i class="fa-solid fa-book book" (click)="addObservacion('abrir')" (click)="getUserById(student.id_usuario)"></i>
-      </td>
-    </tr>
-  </table>
-  <div class="guardar">
-    <button type="submit">Guardar</button>
-  </div>
-  <!--Observaciones-->
-  <form action="" class="observacion__inactivo" id="observacion" [formGroup]="ObservacionForm">
-    <i
-      class="fa-regular fa-circle-xmark cerrar"
-      (click)="addObservacion('cerrar')"
-    ></i>
-    <h3>{{userName}} {{lastnameUser}}</h3>
-    <textarea rows="10" id="queja" placeholder="Añade la observación..." formControlName = "queja"></textarea>
+  <form [formGroup]="AsistenciaForm" (submit)="createAttendance()">
+    <div class="guardar">
+      <button type="submit">Guardar</button>
+    </div>
+    <table>
+      <thead class="head">
+        <th>Alumnos</th>
+        <th>Inasistencia</th>
+        <th>Observación</th>
+      </thead>
+      <tr *ngFor="let student of Courses">
+        <td>{{ student.nombre }} {{ student.apellido }}</td>
+        <td>
+          <input
+            #box
+            type="checkbox"
+            formControlName="checkAsistencia"
+            (change)="llenarArray(student.id_usuario, box.checked)"
+          />
+        </td>
+        <td>
+          <i
+            class="fa-solid fa-book book"
+            (click)="addObservacion('abrir')"
+          ></i>
+        </td>
+        <td class="observacion__inactivo"
+        id="observacion">
+        <i
+        class="fa-regular fa-circle-xmark cerrar"
+        (click)="addObservacion('cerrar')"
+      ></i>
+      <h3>{{ student.nombre }} {{ student.apellido }}</h3>
+      <textarea
+        rows="10"
+        id="queja"
+        placeholder="Añade la observación..."
+        formControlName="queja.student.id_usuario"
+      ></textarea>
+        </td>
+      </tr>
+    </table>
   </form>
-
+  <!--Observaciones-->
   <!--Footer de la página-->
 </body>
 <app-footer></app-footer>

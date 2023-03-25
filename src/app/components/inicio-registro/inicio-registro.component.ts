@@ -59,10 +59,21 @@ export class InicioRegistroComponent implements OnInit {
    this.userService.login(dataUser).subscribe(data => {
     localStorage.setItem('token', data.token);
     this.router.navigate(['/inicio'])
-    Swal.fire({
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    Toast.fire({
       icon: 'success',
-      title: 'Bienvenido!',
-      text: 'Logueado correctamente',
+      title: 'Bienvenido'
     })
    },error => {
     Swal.fire({
@@ -97,6 +108,7 @@ export class InicioRegistroComponent implements OnInit {
           title: 'Registro Exitoso',
           text: 'Usurio registrado exitosamente',
         })
+        this.UsuarioForm.reset();
       }, error => {
         const Toast = Swal.mixin({
           toast: true,

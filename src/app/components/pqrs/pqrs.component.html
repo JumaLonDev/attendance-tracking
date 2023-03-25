@@ -1,15 +1,35 @@
 <!--Menú de navegación-->
 <app-navbar></app-navbar>
 <div class="contenedor">
-    <form action="" [formGroup]="pqrsForm" class="pqrs">
-        <label for="">Correo del profesor a quien se dirige el PQRS</label>
-        <input id="email" type="email" placeholder="Correo del profesor" formControlName="email">
-        <label class="error" for="" *ngIf="pqrsForm.get('email')?.hasError('required') && pqrsForm.get('email')?.touched">El correo del profesor es requerido</label>
-        <label for="">Digite su peticion, queja, reclamo o sugerencia</label>
-        <textarea rows="10" id="queja" formControlName="queja" placeholder="Digitar aquí..."></textarea>
+    <form action="" [formGroup]="pqrsForm" class="pqrs" (submit)="createNewPqrs()">
+        <label for="options">Tipo PQRS</label>
+        <select id="options" formControlName="tipo_pqrs">
+            <option value="Queja">Quejas</option>
+            <option value="Reclamo">Reclamos</option>
+            <option value="Sugerencia">Sugerencias</option>
+            <option value="Peticione">Peticiones</option>
+        </select>
+        <label for="queja">Digite su peticion, queja, reclamo o sugerencia</label>
+        <textarea rows="10" id="queja" placeholder="Digitar aquí..." formControlName="text_pqrs" maxlength="250"></textarea>
         <label class="error" for="" *ngIf="pqrsForm.get('queja')?.hasError('required') && pqrsForm.get('queja')?.touched">Debe de haber texto</label>
         <button type="submit" class="enviarPQRS"> Enviar PQRS <i class="fa-solid fa-paper-plane"></i> </button>
     </form>
 </div>
+<table class="pqrs">
+    <thead>
+        <th>Identificación</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Tipo PQRS</th>
+        <th>PQRS</th>
+    </thead>
+    <tr *ngFor="let i of dataUserPqrs">
+        <td>{{i.num_documento}}</td>
+        <td>{{i.nombre}}</td>
+        <td>{{i.apellido}}</td>
+        <td>{{i.tipo_pqrs}}</td>
+        <td>{{i.text_pqrs}}</td>
+    </tr>
+</table>
 <!--Footer de la página-->
 <app-footer></app-footer>

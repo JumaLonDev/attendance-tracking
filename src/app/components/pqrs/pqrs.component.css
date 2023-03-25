@@ -2,7 +2,7 @@
 .contenedor{display: grid; place-items: center;}
 .pqrs{background-color:  #ededed; width: 80%; display: grid; padding: 4%;margin-top: 4%; border-radius: 15px; box-shadow: 3px 1px 6px 0px grey;}
 .pqrs label{font-weight: bold;margin: 1% 0% 1% 0%;}  
-#email{ width: 29%; padding: 5px; border: 1px #e29226 solid; border-radius: 10px;}
+#options{ width: 29%; padding: 5px; border: 1px #e29226 solid; border-radius: 10px;}
 #queja{height: 100px; padding: 1%; border: 1px #e29226 solid; border-radius: 15px;}
 .enviarPQRS{font-size: 15px;color: white; background-color: #e29226; display: flex; width: 15%; justify-content: space-around; align-items: center; padding: 1%; position: relative; left: 85%; border: none; margin-top: 10px;  border-radius: 15px;}
 .enviarPQRS:hover{color: black; cursor: pointer; }

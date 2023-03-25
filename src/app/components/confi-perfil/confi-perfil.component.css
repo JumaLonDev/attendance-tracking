@@ -6,5 +6,4 @@
 .formularioR input:focus::placeholder{opacity: .7;}
 .buttons button{ width: 35%; height: 25px; color: #eceeeb; background-color: #e29226; border: none; cursor: pointer; border-radius: 15px; margin-left: 1%; transform: scale(1); transition: all .3s linear;}
 a{text-align: center; color: #eceeeb; text-decoration: none;}
-#adminConfig{display: none;}
 .buttons button:hover{transform: scale(.9);}

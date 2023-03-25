@@ -14,11 +14,13 @@ export class NavbarComponent implements OnInit {
   rolUser: any; 
   Aroles = [1,2,3];
   token = localStorage.getItem('token');
+  id_user: any; 
   constructor(private router:Router, private userService: UsuarioService) { 
   }
  
   ngOnInit(): void {
     this.tokenInf();
+    this.getUserById();
   }
   
   menuResponsive(op:string){
@@ -53,8 +55,14 @@ export class NavbarComponent implements OnInit {
 
   tokenInf(){
     let data = this.userService.tknDecode(this.token);
+    this.id_user = data.id_usuario;
     this.rolUser = data.id_rol; 
-    this.userName = data.nombre;
-    this.lastName = data.apellido;  
+  }
+
+  getUserById() {
+    this.userService.getUserById(this.id_user).subscribe(data => {
+      this.userName = data.nombre; 
+      this.lastName = data.apellido;
+    })
   }
 }

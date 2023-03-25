@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { AuthGuard } from './guards/auth.guard';
 import { RouterModule, Routes } from '@angular/router';
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path:'confi-perfil', component:ConfiPerfilComponent, canActivate:[AuthGuard]},
   {path:'confi-administrativa', component:ConfiAdministrativaComponent, canActivate:[AuthGuard, RolesguardsGuard]},//
   {path:'nosotros', component:NosotrosComponent, canActivate:[AuthGuard]},
-  {path: 'informe', component:InformeComponent, canActivate:[AuthGuard] }
+  {path: 'informe', component:InformeComponent, canActivate:[AuthGuard] }, 
+  {path: '**', pathMatch: 'full', redirectTo:''}
 ];
 
 @NgModule({
