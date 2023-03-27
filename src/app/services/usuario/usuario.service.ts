@@ -42,7 +42,7 @@ export class UsuarioService {
   }
 
   login(datos:any): Observable <any>{
-    return this.http.post(this.URL + 'login',datos, this.httpOptions)
+    return this.http.post(this.URL + 'login',datos)
   }
   TKValidations():boolean{
     if(this.jwtHelper.isTokenExpired(this.token) && !localStorage.getItem('token')) return false;

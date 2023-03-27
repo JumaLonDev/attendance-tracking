@@ -10,20 +10,23 @@
             <option value="Peticione">Peticiones</option>
         </select>
         <label for="queja">Digite su peticion, queja, reclamo o sugerencia</label>
-        <textarea rows="10" id="queja" placeholder="Digitar aquí..." formControlName="text_pqrs" maxlength="250"></textarea>
-        <label class="error" for="" *ngIf="pqrsForm.get('queja')?.hasError('required') && pqrsForm.get('queja')?.touched">Debe de haber texto</label>
-        <button type="submit" class="enviarPQRS"> Enviar PQRS <i class="fa-solid fa-paper-plane"></i> </button>
+        <label class="error"*ngIf="pqrsForm.get('queja')?.hasError('required') && pqrsForm.get('queja')?.touched">Debe de haber texto</label><textarea rows="10" id="queja" placeholder="Digitar aquí..." formControlName="text_pqrs" maxlength="250"></textarea>
+        <div class="buttons">
+            <button type="submit" class="enviarPQRS"> Enviar PQRS <i class="fa-solid fa-paper-plane"></i> </button>
+        </div>
     </form>
+    <button class="enviarPQRS" (click)="openViewPqrs('abrir')"> Ver PQRS </button>
 </div>
-<table class="pqrs">
-    <thead>
+<div class="main main__inactivo" id="pqrs">
+    <table>
+        <thead>
         <th>Identificación</th>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Tipo PQRS</th>
         <th>PQRS</th>
     </thead>
-    <tr *ngFor="let i of dataUserPqrs">
+    <tr class="tr" *ngFor="let i of dataUserPqrs">
         <td>{{i.num_documento}}</td>
         <td>{{i.nombre}}</td>
         <td>{{i.apellido}}</td>
@@ -31,5 +34,7 @@
         <td>{{i.text_pqrs}}</td>
     </tr>
 </table>
+<button class="enviarPQRS" (click)="openViewPqrs('cerrar')">Cerrar</button>
+</div>
 <!--Footer de la página-->
 <app-footer></app-footer>

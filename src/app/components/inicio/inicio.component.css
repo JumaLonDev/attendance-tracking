@@ -5,7 +5,7 @@
 .delete{font-size: 20px; cursor: pointer;}
 .delete:hover{color: red;}
 .card-header{border-bottom: 2px solid #9e8bf4; margin-bottom: 2vh; cursor: pointer;}
-.card:hover{transform: scale(1.2);}
+.card:hover{transform: scale(1.1);}
 /*Formulario para agregar ficha*/
 form{background-color:#ededed; width: 425px; display: flex; align-items: center; justify-content: center; position: absolute ; left: 35%; border-radius: 5%; flex-direction: column; border: #9e8bf4 solid 1px; top: 25%; animation-name: agregar;
 animation-duration: .8s; animation-timing-function: ease-in-out; animation-delay: 1;animation-direction: normal; z-index: 2;}

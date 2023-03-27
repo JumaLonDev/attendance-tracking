@@ -7,6 +7,15 @@ h2{font-size: 15px; text-align: center; border-bottom: 3px solid #e29226;}
 .footer1 a{text-decoration: none; color: black; font-weight: bold;}
 .footer1 ul li:hover{border-bottom: 1px solid #e29226;}
 
+/*Redes Sociales*/
+.redes{position: absolute; top: 65%; display: flex; justify-content: space-around; }
+.redes ul{flex-direction: row; display: flex; position: relative; }
+.redes ul li{list-style: none; place-items: center; width: 2rem; } 
+.redes li{text-decoration: none; display: grid; place-items: center; margin: 1rem;  }
+.redes i{color:rgba(44, 43, 43, 0.678);}
+.redes i:hover{color: #e29226; }
+.redes li:hover{border: 1px #e29226 solid; border-radius: 180px; margin: 0.5rem;}
+
 @media only screen and (max-width:715px){
     h2{font-size: 10;}
     footer{align-items: center; height: auto; font-size: 1px;}

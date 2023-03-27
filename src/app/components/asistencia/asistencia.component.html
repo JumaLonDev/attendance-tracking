@@ -37,24 +37,23 @@
             (click)="addObservacion('abrir')"
           ></i>
         </td>
-        <td class="observacion__inactivo"
-        id="observacion">
-        <i
-        class="fa-regular fa-circle-xmark cerrar"
-        (click)="addObservacion('cerrar')"
-      ></i>
-      <h3>{{ student.nombre }} {{ student.apellido }}</h3>
-      <textarea
-        rows="10"
-        id="queja"
-        placeholder="Añade la observación..."
-        formControlName="queja.student.id_usuario"
-      ></textarea>
-        </td>
       </tr>
     </table>
   </form>
   <!--Observaciones-->
+  <!-- <form class="observacion__inactivo" id="observacion" (formGroup)="ObservacionForm">
+    <i
+      class="fa-regular fa-circle-xmark cerrar"
+      (click)="addObservacion('cerrar')"
+    ></i>
+    <h3>{{ userName }}{{ lastnameUser }}</h3>
+    <textarea
+      rows="10"
+      id="queja"
+      placeholder="Añade la observación..."
+      formControlName="queja"
+    ></textarea>
+  </form> -->
   <!--Footer de la página-->
 </body>
 <app-footer></app-footer>

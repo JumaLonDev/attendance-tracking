@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historial.component.css']
 })
 export class HistorialComponent implements OnInit {
+  date = new Date();
 
   constructor() { }
 

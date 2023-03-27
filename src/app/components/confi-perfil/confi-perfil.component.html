@@ -19,8 +19,8 @@
     <div class="buttons">  
     <button type="submit" (click)="updateUserById()">Actualizar</button>
     <!--Configuraciones administrativas serán habilitadas cuando un usuario sea administrador-->
-    <button id="adminConfig"*ngIf="data.id_rol== Roles[0]"><a routerLink="../confi-administrativa">Configuración administrativa</a></button>
-  </div>
+    <button id="adminConfig" *ngIf="data.id_rol === Roles[0]"><a routerLink="../confi-administrativa">Configuración administrativa</a></button>
+    </div>
   </form>
 </div>
 <!--Footer de la página-->

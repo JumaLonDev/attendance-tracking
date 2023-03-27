@@ -1,2 +1,10 @@
-
-
+.contenedor{justify-content: center; text-align: center; display: flex; flex-direction: column; align-items: center;} 
+.contenedor h2{padding: 2%;}
+.datos{width: 100%; display: flex; justify-content: center; }
+.tabla{width: 50%;}
+thead{background-color: #e29226; }
+thead tr th{padding: 2%; font-size: 18px; border-radius: 0.5rem;}
+tbody{background-color: #d4d4d4; }
+tbody tr:nth-of-type(even){background-color: #f4f3f3}
+tbody tr td{padding: 2%; border-radius: 0.5rem;}
+button{position: relative; top: 1rem; padding: 3%; width: 7rem; border: none; background-color: #a77cf4; font-weight: 600; font-size: 15px; border-radius: 12px; cursor: pointer; box-shadow: 1px 1px 4px 1px grey; left: 80%;}

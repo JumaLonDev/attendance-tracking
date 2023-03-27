@@ -1,13 +1,17 @@
 <!--Menú de navegación-->
 <app-navbar></app-navbar>
 
-<form action="" class="FomrConfiAdministrativa">
-    <label for="">Faltas requeridas para inicar debido proceso</label>
-    <input id="faltas" type="number" placeholder="Total de faltas" >
-    <label for="">Digite el comunicado que se le enviara al alumno una vez falte las veces permitidas.</label>
-    <textarea rows="10" id="comunicado"></textarea>
-    <button type="submit" class="actualizar"> Actualziar <i class="fa-solid fa-check-double"></i> </button>
-</form>
+<div class="contenedor">
+    <form action="" class="FomrConfiAdministrativa">
+        <div class="contenedor2">
+            <label for="">Faltas requeridas para inicar debido proceso</label>
+            <input id="faltas" type="number" placeholder="Total de faltas" >
+            <label for="">Digite el comunicado que se le enviara al alumno una vez falte las veces permitidas</label>
+            <textarea rows="10" id="comunicado" placeholder="Ingresar el texto aquí"></textarea>
+            <button type="submit" class="actualizar"> Actualizar <i class="fa-solid fa-arrow-rotate-left "></i> </button>
+        </div>
+    </form>
+  </div>
 
 <!--Footer de la página-->
 <app-footer></app-footer>

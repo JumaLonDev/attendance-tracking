@@ -32,8 +32,25 @@ export class PqrsComponent implements OnInit {
       tipo_pqrs: this.pqrsForm.get('tipo_pqrs')?.value, 
       text_pqrs: this.pqrsForm.get('text_pqrs')?.value
     }
-
-    this.pqrsService.createNewpqrs(dataPqrs).subscribe(data => {
+    if(dataPqrs.text_pqrs == '' || dataPqrs.tipo_pqrs == '' ){
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'error',
+        title: 'Hay Campos vacios'
+      })
+    }else {
+      this.pqrsService.createNewpqrs(dataPqrs).subscribe(data => {
+        
         const Toast = Swal.mixin({
           toast: true,
           position: 'top-end',
@@ -50,6 +67,7 @@ export class PqrsComponent implements OnInit {
           title: 'PQRS Enviado correctamente'
         })
         this.pqrsForm.reset();
+        this.refresh()
     }, error => {
       const Toast = Swal.mixin({
         toast: true,
@@ -67,6 +85,20 @@ export class PqrsComponent implements OnInit {
         title: 'Error al Enviar el PQRS'
       })
     })
+    }
+  }
+
+  openViewPqrs(op: string){
+    switch (op) {
+      case 'abrir':
+        document.getElementById('pqrs')?.classList.remove('main__inactivo');
+        document.getElementById('pqrs')?.classList.add('main__activo');
+        break;
+      case 'cerrar':
+        document.getElementById('pqrs')?.classList.remove('main__activo');
+        document.getElementById('pqrs')?.classList.add('main__inactivo');
+        break;
+    }
   }
 
   getPqrsByUser():void{

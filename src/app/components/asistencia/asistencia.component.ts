@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CursoService } from 'src/app/services/curso/curso.service';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { AsistenciaService } from 'src/app/services/asistencia/asistencia.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-asistencia',
   templateUrl: './asistencia.component.html',
@@ -90,24 +91,56 @@ export class AsistenciaComponent implements OnInit {
     });
   }
 
-  createAttendance() {
-    this.asistenciaService
-      .createNewAttendance(this.inasistencia)
-      .subscribe((data) => {
-
-      });
+  createAttendance(){
+    this.asistenciaService.createNewAttendance(this.inasistencia).subscribe({
+      next:(data) => {
+      }, error:(error) => {
+      }
+    })
+    if(!this.AsistenciaForm){
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'info',
+        title: 'Al parecer todos vinieron hoy'
+      })
+    }else{
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'success',
+        title: 'Enviado correctamente'
+      })
+    }
   }
-
   llenarArray(id_usuario: number, c_inasistencia?: any) {
-    if (c_inasistencia) { 
+    if (c_inasistencia) {
       this.inasistencia.push({
         id_usuario,
         c_inasistencia,
         id_curso: Number(this.courseid),
-        f_inasistencia: this.date
+        f_inasistencia: this.date,
       });
     } else {
-      this.inasistencia.splice(this.inasistencia.indexOf(c_inasistencia), 1);
+      this.inasistencia.splice(this.inasistencia.indexOf(c_inasistencia),1);
     }
     console.log(this.inasistencia);
   }

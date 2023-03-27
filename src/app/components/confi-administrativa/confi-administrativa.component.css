@@ -1,6 +1,10 @@
-.FomrConfiAdministrativa{background-color:  #ededed; width: 100%; display: grid; padding: 5%;margin-top: 1%;}
-.FomrConfiAdministrativa label{font-weight: bold;margin: 1% 0% 1% 0%;}  
-#faltas{ width: 29%; padding: 5px; text-align: center;}
-#comunicado{padding: 1%;}
-.actualizar{font-size: 15px;background-color: #e29226; display: flex; width: 15%; justify-content: space-around; align-items: center; padding: 1%; position: relative; left: 85%; border: none; margin-top: 5px;}
-.actualizar:hover{color: white; cursor: pointer;}
+.contenedor{position: relative; width: 60%; height: 400px; margin: 2rem auto 0; background-color: rgb(215, 195, 224);border-radius: 4px; box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.537); display: grid; }
+.FomrConfiAdministrativa{position: absolute; width: 110%; left: -40px; top:2rem;  height: 335px; padding: 30px; background-color: #FFF;border-radius: 4px; box-shadow: 0px 0px 5px 2px rgba(128, 128, 128, 0.537);}
+.contenedor2 label {font-size: 16px;font-weight: 600; padding: 2%;}
+.contenedor2 label, input{display: block;}
+.contenedor2:after {position: absolute;content: "";right: -10px;bottom: 68px;width: 0;height: 0;border-left: 0px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #7149c7; }
+.contenedor2 input, textarea{bottom: 30px;border: none;border-bottom: 1px solid #d4d4d4;padding: 10px;width: 65%;background: transparent;transition: all .25s ease;}
+#comunicado{padding: 1%; height: 7rem; border-top: 1px solid #d4d4d4;}
+.contenedor2 input:focus{outline: none;border-bottom: 1px solid #a77cf4; }
+.contenedor2 .actualizar {position: absolute;border-radius: 30px;border-bottom-right-radius: 0;border-top-right-radius: 0;background-color: #a77cf4;border: none;color: #FFF;padding: 12px 25px;display: inline-block;font-size: 12px;font-weight: bold;letter-spacing: 2px;right: -10px;bottom: 30px;cursor: pointer;transition: all .25s ease;box-shadow: -5px 6px 20px 0px rgba(51, 51, 51, 0.4);}
+.contenedor2 .actualizar:hover {background-color: #8e62dc;}

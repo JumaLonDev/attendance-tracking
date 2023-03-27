@@ -3,6 +3,16 @@
 .pqrs{background-color:  #ededed; width: 80%; display: grid; padding: 4%;margin-top: 4%; border-radius: 15px; box-shadow: 3px 1px 6px 0px grey;}
 .pqrs label{font-weight: bold;margin: 1% 0% 1% 0%;}  
 #options{ width: 29%; padding: 5px; border: 1px #e29226 solid; border-radius: 10px;}
-#queja{height: 100px; padding: 1%; border: 1px #e29226 solid; border-radius: 15px;}
-.enviarPQRS{font-size: 15px;color: white; background-color: #e29226; display: flex; width: 15%; justify-content: space-around; align-items: center; padding: 1%; position: relative; left: 85%; border: none; margin-top: 10px;  border-radius: 15px;}
+#queja{height: 100px; padding: 1%; border: 1px #e29226 solid; border-radius: 15px; margin-bottom: 2%;}
+.buttons{width: 100%; display: flex;justify-content: end;}
+.enviarPQRS{font-size: 15px;color: white; background-color: #e29226; display: flex; width: 15%; justify-content: space-around; align-items: center; padding: 1%;border: none; border-radius: 15px;margin-top: 1%;}
 .enviarPQRS:hover{color: black; cursor: pointer; }
+
+/*Estilos de la información de los pqrs*/
+.main__activo{display: flex; flex-direction: column;}
+.main__inactivo{display: none;}
+.main{width: 100%; position: absolute; height: 100vh; align-items: center; justify-content: center; backdrop-filter: blur(15px); top: 1%;}
+.main table{width: 70%; background-color: #ededed; border-radius: 15px;}
+.main th{margin: 5%;border-radius: 10px; background-color: black; color: white; height: 50px;}
+.main td{ text-align: center; height: 30px; cursor: pointer;}
+.main tr:hover{box-shadow:8px 1px 15px 3px rgba(0, 0, 0, 0.6);border-radius: 10px;}

@@ -1,24 +1,65 @@
+<!--Navbar-->
 <nav>
-    <div class="logo"><img src="../../../assets/images/LoguitoAT-1(1).png" alt=""></div>
-    <div class="name">
-        <li><a href="#">Attendance Tracking</a></li>
-    </div>
-    <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Terminos y Condiciones</a></li>
-    </ul>
+  <div class="logo">
+    <img src="../../../assets/images/LoguitoAT-2.png" alt="" />
+  </div>
+  <div class="name">
+    <li><a href="#">Attendance Tracking</a></li>
+  </div>
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Terminos y Condiciones</a></li>
+  </ul>
 </nav>
 
+<!--Card de ingreso a registo y login-->
 <div class="main">
-    <div class="registro">
-        <h2 class="titulo">¡Registrate!</h2>
-        <div class="botones">
-            <button routerLink="/inicio-registro">Profesores</button>
-            <button routerLink="/inicio-registro">Estudiantes</button>
-        </div>
-        <h3 id="lema">Siempre Puntua Siendo Puntual</h3>
-        <h4><a routerLink="/inicio-registro">¿Ya tienes cuenta?</a></h4>
+  <div class="registro">
+    <h2 class="titulo">¡Registrate!</h2>
+    <div class="botones">
+      <button routerLink="/inicio-registro">Profesores</button>
+      <button routerLink="/inicio-registro">Estudiantes</button>
     </div>
-    <img id="imagen"src="../../../assets/images/star.jpg" alt="">
+    <h3 id="lema">Siempre Puntua Siendo Puntual</h3>
+    <h4><a routerLink="/inicio-registro">¿Ya tienes cuenta?</a></h4>
+  </div>
+
+  <!--SLIDER AUTOMATICO-->
+  <div class="slider">
+    <div class="slider-container">
+      <figure>
+        <img
+          class="img-responsive"
+          id="imagen"
+          src="../../../assets/images/1.jpg"
+          alt=""
+        />
+      </figure>
+      <figure>
+        <img
+          class="img-responsive"
+          id="imagen"
+          src="../../../assets/images/2.jpg"
+          alt=""
+        />
+      </figure>
+      <figure>
+        <img
+          class="img-responsive"
+          id="imagen"
+          src="../../../assets/images/3.jpg"
+          alt=""
+        />
+      </figure>
+      <figure>
+        <img
+          class="img-responsive"
+          id="imagen"
+          src="../../../assets/images/4.jpg"
+          alt=""
+        />
+      </figure>
+    </div>
+  </div>
 </div>
-<app-footer></app-footer>
+<app-footer></app-footer>    
