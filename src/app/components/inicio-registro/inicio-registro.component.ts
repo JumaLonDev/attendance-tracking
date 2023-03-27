@@ -26,29 +26,34 @@ export class InicioRegistroComponent implements OnInit {
     // Variables animation
    };
 
+    // inicio animacion 
+    Animacion(opcion: string){
+      switch(opcion){
+        case 'iniciarsesion':
+        document.getElementById('loginRegistro')?.classList.add('lizq');
+        document.getElementById('loginRegistro')?.classList.remove('lder');
+        document.getElementById('registro')?.classList.remove('registroActivo');
+        document.getElementById('registro')?.classList.add('registroInactivo');
+        document.getElementById('login')?.classList.remove('loginInactivo');
+        document.getElementById('login')?.classList.add('loginActivo');
+        break;
+        case 'registrarse':
+        document.getElementById('loginRegistro')?.classList.remove('lizq');
+        document.getElementById('loginRegistro')?.classList.add('lder');
+        document.getElementById('login')?.classList.remove('loginActivo');
+        document.getElementById('login')?.classList.add('loginInactivo');
+        document.getElementById('registro')?.classList.remove('registroInactivo');
+        document.getElementById('registro')?.classList.add('registroActivo');
+        break;
+      }
+    }
+    // Fin animacion
+
    
    ngOnInit(): void {
     localStorage.removeItem('token');
   }
-  Animacion(opcion: string){
-    switch(opcion){
-      case 'iniciarsesion':
-      document.getElementById('loginRegistro')?.classList.remove('lgr');
-      document.getElementById('registro')?.classList.remove('registroActivo');
-      document.getElementById('registro')?.classList.add('registroInactivo');
-      document.getElementById('login')?.classList.remove('loginInactivo');
-      document.getElementById('login')?.classList.add('loginActivo');
-      break;
-      case 'registrarse':
-      document.getElementById('loginRegistro')?.classList.add('lgr');
-      document.getElementById('login')?.classList.remove('loginActivo');
-      document.getElementById('login')?.classList.add('loginInactivo');
-      document.getElementById('registro')?.classList.remove('registroInactivo');
-      document.getElementById('registro')?.classList.add('registroActivo');
-      break;
-    }
-  }
-  // Fin animacion
+  
   
   logear(): void {
    const dataUser: any = {
