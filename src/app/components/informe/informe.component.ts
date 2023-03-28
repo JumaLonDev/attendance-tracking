@@ -17,7 +17,9 @@ export class InformeComponent implements OnInit {
   fe: any;
   date = new Date();
   id_user: any;
+  id_rol: any;
   list : any [] = [];
+  Aroles = [1,2,3]
   DATA: HTMLElement | any;
 
   constructor(private asistencia:AsistenciaService, private userService: UsuarioService) { }
@@ -25,7 +27,11 @@ export class InformeComponent implements OnInit {
   ngOnInit(): void {
     this.tokenInf();
     this.fecha();
-    this.getCountAttendance();
+    if(this.id_rol === 1){
+      this.getAllReport();
+    }else{
+      this.getCountAttendance();
+    }
   }
 
   fecha(): void {
@@ -39,7 +45,7 @@ export class InformeComponent implements OnInit {
   tokenInf(){
     let data = this.userService.tknDecode(this.token);
     this.id_user = data.id_usuario
-    console.log(data);
+    this.id_rol = data.id_rol
   }
 
   getCountAttendance() {
@@ -65,6 +71,29 @@ export class InformeComponent implements OnInit {
     })
   }
 
+  getAllReport(){
+    this.asistencia.getAttendance().subscribe(data => {
+      this.list = data
+    },error => {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'error',
+        title: 'Error al obtener todos los informes'
+      })
+    })
+  }
+
   //Metodos para descargar los PDF
   async download(){
     try {
@@ -83,7 +112,6 @@ export class InformeComponent implements OnInit {
           {
             image: imgData,
             width: 600,
-            height: 550
           }
         ], 
         pageMargins:5,

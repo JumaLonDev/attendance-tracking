@@ -26,8 +26,6 @@
             <option value="Tarde">Tarde</option>
         </select>
         <label class="error" for="" *ngIf="ACursoForm.get('addCurso')?.hasError('required') && ACursoForm.get('addCurso')?.touched">La jornada del curso es requerido</label>
-        <input class="addCurso" type="text" placeholder="Profesor Curso" formControlName="prof_curso">
-        <label class="error" for="" *ngIf="ACursoForm.get('addCurso')?.hasError('required') && ACursoForm.get('addCurso')?.touched">El profesor del curso es requerido</label>
         <button class="agregar" id="AgregarCurso" type="submit"> Agregar Curso</button>
     </form>
 
