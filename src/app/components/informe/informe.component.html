@@ -11,36 +11,20 @@
     </div>
 </div>
 
-<table>
+<table id="informe">
     <tr class="head">
         <th>Alumnos</th>
         <th>Fecha</th>
         <th>Curso</th>
     </tr>
-    <tr>
-        <td>Guillermo Lopez</td>
-        <td>01/10/2023</td>
-        <td>Edwar Lopera</td>
+    <tr *ngFor="let i of list">
+        <td>{{i.nombre}} {{i.apellido}}</td>
+        <td>{{i.f_inasistencia|date}}</td>
+        <td>{{i.nom_curso}}</td>
     </tr>
-    <tr>
-        <td>Lorena Quiceno</td>
-        <td>01/10/2023</td>
-        <td>Adelaida Cano</td>
-    </tr>
-    <tr>
-        <td>Andrés Escobar</td>
-        <td>01/10/2023</td>
-        <td>Richard Batancurt</td>
-    </tr>
-    <tr>
-        <td>Juan Morales</td>
-        <td>01/10/2023</td>
-        <td>José Lopez</td>
-    </tr>
-
 </table>
 <div class="guardar">
-    <button type="submit">Descargar</button>
+    <button (click)="download()">Descargar <i class="fa-solid fa-file-pdf" style="color: #000000;"></i></button>
 </div>
 
 
