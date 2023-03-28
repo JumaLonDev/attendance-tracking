@@ -62,7 +62,7 @@
                         </div>
                         <div form>
                             <input class="password" type="password" placeholder="Contraseña" formControlName = "password">
-                            <label class="error" *ngIf="UsuarioForm.get('password')?.invalid && (UsuarioForm.get('password')?.dirty || UsuarioForm.get('password')?.touched)">La contraseña es requerida requerido</label>
+                            <label class="error" *ngIf="UsuarioForm.get('password')?.invalid && (UsuarioForm.get('password')?.dirty || UsuarioForm.get('password')?.touched)">La contraseña es requerida</label>
                         </div>
                             <button type="submit">Ingresar</button>
                     </form>

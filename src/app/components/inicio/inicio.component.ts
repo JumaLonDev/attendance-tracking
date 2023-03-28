@@ -19,7 +19,7 @@ export class InicioComponent implements OnInit {
   Aroles = [1,2,3]; 
   token = localStorage.getItem('token');
   Courses: any[] = [];
-
+  
   constructor(private fb: FormBuilder, private router:Router, private userService: UsuarioService, private courserSevice: CursoService, private detalleCursoSubs: DtllCurEstuService){
     this.ACursoForm = this.fb.group({
       num_curso:['',Validators.required], 
