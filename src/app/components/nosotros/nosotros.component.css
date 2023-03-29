@@ -1,5 +1,5 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
-.container{max-width: 1310px;perspective: 1000px;display: flex;flex-wrap: wrap; position: relative; background-color: aqua; justify-content: center; align-items: center;}
+.container{max-width: 1310px;perspective: 1000px;display: flex;flex-wrap: wrap; position: relative;justify-content: center; align-items: center;}
 .card__father{margin: 20px;perspective: 1000px; z-index: 0; }
 .card__father:hover .card{ transform: rotateY(180deg);}
 .card{width: 200px;height: 300px;position: relative;transform-style: preserve-3d;transition: all 600ms;}
