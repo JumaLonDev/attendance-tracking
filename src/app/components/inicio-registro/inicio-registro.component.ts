@@ -1,9 +1,8 @@
-import { animation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { max } from 'rxjs';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
-//import { CargarScriptsService } from '../../services/cargar-scripts.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-inicio-registro',
@@ -12,21 +11,28 @@ import Swal from 'sweetalert2';
 })
 export class InicioRegistroComponent implements OnInit {
   UsuarioForm: FormGroup;
+  passwordRegex = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+  correoRegex = new RegExp('^[^@]+@[^@]+\.[a-zA-Z]{2,}$');
   constructor(private fb: FormBuilder, private userService: UsuarioService, private router: Router, private Aroute: ActivatedRoute) {
 
       this.UsuarioForm = this.fb.group({
         email:['', Validators.required], 
-        password:['', Validators.required], 
+        password:['', Validators.required], //Digitos, Minusculas y Mayusculas
         nombre:['', Validators.required], 
         apellido:['', Validators.required],
-        num_documento:['', Validators.required], 
-        num_contacto:['', Validators.required],
+        num_documento:['', Validators.required,], 
+        num_contacto: ['', Validators.required,],
         animation:['', Validators.required]
       });
     // Variables animation
    };
 
-    // inicio animacion 
+   
+   ngOnInit(): void {
+    localStorage.removeItem('token');
+  }
+  
+  // inicio animacion 
     Animacion(opcion: string){
       switch(opcion){
         case 'iniciarsesion':
@@ -49,11 +55,8 @@ export class InicioRegistroComponent implements OnInit {
     }
     // Fin animacion
 
-   
-   ngOnInit(): void {
-    localStorage.removeItem('token');
-  }
-  
+
+
   
   logear(): void {
    const dataUser: any = {
@@ -100,14 +103,41 @@ export class InicioRegistroComponent implements OnInit {
       contrasena: this.UsuarioForm.get('password')?.value
     }
 
-    if(dataUser.nombre == '' || dataUser.apellido =='' || dataUser.correo == '' || dataUser.num_documento == '' ||  dataUser.num_contacto == '', dataUser.contrasena == '' ){
+    
+
+    if(dataUser.nombre == '' || dataUser.apellido == '' || dataUser.correo == '' || dataUser.num_documento == '' ||  dataUser.num_contacto == '', dataUser.contrasena == '' ){
       Swal.fire({
         icon: 'error',
         title: 'Error al registrase',
         text: 'Hay Campos vacios',
       })
-    }else{
-      this.userService.createNewUSer(dataUser).subscribe(data => {
+    }else if(dataUser.num_contacto.toString().length > 10 || dataUser.num_contacto.toString().length < 10){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al registrase',
+        text: 'Número celular no valido',
+      })
+    } else if(!this.passwordRegex.test(dataUser.contrasena)){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al registrase',
+        text: 'La contraseña debe contener Mayusculas, Minusculas y Números.',
+      })
+      }
+    // } else if(!t){
+      // Swal.fire({
+      //   icon: 'error',
+      //   title: 'Error al registrase',
+      //   text: 'La contraseña debe contener Mayusculas, Minusculas y Números.',
+      // })
+      else if(!this.correoRegex.test(dataUser.correo)){
+        Swal.fire({
+          icon: 'error',
+          title: 'Error al registrase',
+          text: 'El formato del correo no es valido',
+        })
+    }else {
+    this.userService.createNewUSer(dataUser).subscribe(data => {
         Swal.fire({
           icon: 'success',
           title: 'Registro Exitoso',
@@ -126,13 +156,9 @@ export class InicioRegistroComponent implements OnInit {
             toast.addEventListener('mouseleave', Swal.resumeTimer)
           }
         })
-        
-        Toast.fire({
-          icon: 'error',
-          title: 'Error al registrar el usuario'
-        })
         return false;
+        
       })
     }
-   };
-}
+    }
+  };
