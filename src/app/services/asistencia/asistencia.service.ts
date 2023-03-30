@@ -38,5 +38,16 @@ export class AsistenciaService {
   deleteAttendanceById(id:string): Observable <any> { 
     return this.http.delete(this.URL + id, this.httpOptions);
   }
+  coutAnttendanceByid(id:number): Observable <any> {
+    return this.http.get(this.URL + '/count/' + id, this.httpOptions);
+  }
+  sendEmailAdve(correo:any): Observable <any> {
+    return this.http.post( 'http://localhost:3000/email',correo, this.httpOptions);
+  }
+  
+  getReport(id: string): Observable<any> {
+    return this.http.get('http://localhost:3000/report/' + id, this.httpOptions)
+  }
+
 
 }

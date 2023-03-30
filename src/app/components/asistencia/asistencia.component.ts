@@ -131,8 +131,31 @@ export class AsistenciaComponent implements OnInit {
       })
     }
   }
-  llenarArray(id_usuario: number, c_inasistencia?: any) {
+  llenarArray(id_usuario: number, c_inasistencia?: any, correo?: any) {
     if (c_inasistencia) {
+      this.asistenciaService.coutAnttendanceByid(id_usuario).subscribe(data =>{
+        if(data > 3){
+          const email = {correo}
+          this.asistenciaService.sendEmailAdve(email).subscribe(data => {
+            console.log(correo);
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+            Toast.fire({
+              icon: 'success',
+              title: 'Se han enviado correos de Adverterncia'
+            })
+          })
+        }
+      })
       this.inasistencia.push({
         id_usuario,
         c_inasistencia,

@@ -32,7 +32,7 @@ export class ConfiPerfilComponent implements OnInit {
     })
    }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
     this.getUserById();
   }
 

@@ -24,8 +24,7 @@ export class InicioComponent implements OnInit {
     this.ACursoForm = this.fb.group({
       num_curso:['',Validators.required], 
       nom_curso: ['', Validators.required], 
-      jornada_curso: ['', Validators.required],
-      prof_curso:['', Validators.required]
+      jornada_curso: ['', Validators.required]
     }); 
     this.SubsCurso = this.fb.group({
       cod_cursos:['', Validators.required]
@@ -65,9 +64,8 @@ export class InicioComponent implements OnInit {
       num_curso: this.ACursoForm.get('num_curso')?.value, 
       nom_curso: this.ACursoForm.get('nom_curso')?.value,
       jornada_curso: this.ACursoForm.get('jornada_curso')?.value, 
-      prof_curso: this.ACursoForm.get('prof_curso')?.value
     }
-    if(dataCurso.num_curso == '' || dataCurso.nom_curso == '' || dataCurso.jornada_curso == '' || dataCurso.prof_curso == ''){
+    if(dataCurso.num_curso == '' || dataCurso.nom_curso == '' || dataCurso.jornada_curso == ''){
       Swal.fire({
         icon: 'error',
         title: 'Error al registrase',
